@@ -4,13 +4,26 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   before_validation :set_default_role
+  #after_validation :check_current_user
   belongs_to :role
   validates :name, presence: true
   protected
   def set_default_role
-  	binding.pry
+    binding.pry
   	role=Role.find_by_name("customer")
-  	binding.pry
     self.role_id = role.id
   end
+
+  # def check_current_user
+  #   binding.pry
+  #   role=Role.find_by_name("admin")
+  #   if self.name="admin"
+  #     redirect_to brands_show_path
+  #   else
+  #     render home_welcome_path
+      
+  #   end
+      
+  # end
+
 end

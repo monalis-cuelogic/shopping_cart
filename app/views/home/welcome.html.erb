@@ -1,1 +1,2 @@
-<h1>Welcome to shopping cart</h1>
+<h1>Welcome <%= current_user.name %></h1>
+<%= link_to "sign out", destroy_user_session_path , method: :delete %>

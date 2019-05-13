@@ -1,4 +1,7 @@
 class BrandsController < ApplicationController
+    # before_action :authenticate_user!
+    # before_action :authorize_admin, :only => [:create]
+
 	def show
 
 		@brand=Brand.all
