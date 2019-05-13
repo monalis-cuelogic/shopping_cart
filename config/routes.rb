@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'brands/new'
   post 'brands/new', to: 'brands#create'
-  get 'brands/show', to: 'brands#show'
+  get 'brands/show'
+
+  get 'brands/:id/edit', to: 'brands#edit', as: 'brands_edit'
+  put 'brands/:id', to: 'brands#update'
+
+
   delete 'brands/:id', to: 'brands#destroy', as: 'brands_delete'
   devise_for :users, controllers: { sessions: 'users/sessions'}
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-

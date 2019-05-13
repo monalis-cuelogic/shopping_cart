@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1 style="color:#000080"><center>Update Edit</center></h1>
-<%= form_for @user, url: {:controller => :user, action: :update}, html: { method: :put } do |form| %>
+<%= form_for @brand, url: {:controller => :brands, action: :update}, html: { method: :put } do |form| %>
     <p>
     <%= form.label :Brand_name %><br>
     <%= form.text_field :name, placeholder: "Enter Name" %>

@@ -6913,3 +6913,369 @@ Processing by BrandsController#new as HTML
 Completed 200 OK in 4713ms (Views: 26.5ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-05-13 10:45:45 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 474ms (Views: 425.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/brand/new" for 127.0.0.1 at 2019-05-13 10:45:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/brand/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/brands/new" for 127.0.0.1 at 2019-05-13 10:46:00 +0530
+Processing by BrandsController#new as HTML
+  Rendering brands/new.html.erb within layouts/application
+  Rendered brands/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 3886ms (Views: 48.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:24:28 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 65ms (Views: 42.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:24:31 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:24:35 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:25:54 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (134.5ms)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `brands_edit_path' for #<#<Class:0x00007fc3cd7b8a98>:0x00007fc3c4102978>
+Did you mean?  brands_delete_path
+               brands_new_path
+               brands_show_path):
+    11:     <tr>
+    12:       <td><%= brand.name %></td>
+    13:       <td><%= brand.description %></td>
+    14:       <td><%= link_to 'Update', brands_edit_path(brand)%></td>
+    15:       <td><%= link_to 'Delete', brands_delete_path(brand),
+    16:               method: :delete,
+    17:               data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/brands/show.html.erb:14:in `block in _app_views_brands_show_html_erb___4574026907286513848_70239392373340'
+app/views/brands/show.html.erb:10:in `_app_views_brands_show_html_erb___4574026907286513848_70239392373340'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:27:14 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 205ms (Views: 195.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:27:16 +0530
+Processing by BrandsController#edit as 
+Completed 404 Not Found in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:17:in `edit'
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:27:44 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BrandsController#edit as 
+Completed 404 Not Found in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:17:in `edit'
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:27:48 +0530
+Processing by BrandsController#edit as 
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:17:in `edit'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:27:55 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 214ms (Views: 213.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:27:57 +0530
+Processing by BrandsController#edit as 
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:17:in `edit'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:29:30 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 205ms (Views: 195.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:29:32 +0530
+Processing by BrandsController#edit as 
+Completed 404 Not Found in 69966ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:16:in `edit'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:30:48 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:30:50 +0530
+Processing by BrandsController#edit as 
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):4
+Completed 404 Not Found in 70274ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:16:in `edit'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:32:08 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 207ms (Views: 197.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:32:10 +0530
+Processing by BrandsController#edit as 
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:16
+Completed 404 Not Found in 28591ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand with 'id'={:id=>nil}):
+  
+app/controllers/brands_controller.rb:16:in `edit'
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:33:14 +0530
+Processing by BrandsController#edit as 
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:16
+Completed 404 Not Found in 92896ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand with 'id'={:id=>nil}):
+  
+app/controllers/brands_controller.rb:16:in `edit'
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:34:50 +0530
+Processing by BrandsController#edit as 
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):4
+Completed 404 Not Found in 290176ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand without an ID):
+  
+app/controllers/brands_controller.rb:16:in `edit'
+Started GET "/brands/edit.3" for 127.0.0.1 at 2019-05-13 11:39:47 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/brands/edit.3"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:39:55 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 161ms (Views: 155.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/brands/3/edit" for 127.0.0.1 at 2019-05-13 11:39:57 +0530
+Processing by BrandsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mCACHE Brand Load (0.0ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:16
+  Rendering brands/edit.html.erb within layouts/application
+  Rendered brands/edit.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 25465ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     5: </head>
+     6: <body>
+     7: <h1 style="color:#000080"><center>Update Edit</center></h1>
+     8: <%= form_for @user, url: {:controller => :user, action: :update}, html: { method: :put } do |form| %>
+     9:     <p>
+    10:     <%= form.label :Brand_name %><br>
+    11:     <%= form.text_field :name, placeholder: "Enter Name" %>
+  
+app/views/brands/edit.html.erb:8:in `_app_views_brands_edit_html_erb__929966674668807147_70054139325560'
+Started GET "/brands/3/edit" for 127.0.0.1 at 2019-05-13 11:41:13 +0530
+Processing by BrandsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:16
+  Rendering brands/edit.html.erb within layouts/application
+  Rendered brands/edit.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 2854ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"user", :id=>"3"}):
+     5: </head>
+     6: <body>
+     7: <h1 style="color:#000080"><center>Update Edit</center></h1>
+     8: <%= form_for @brand, url: {:controller => :user, action: :update}, html: { method: :put } do |form| %>
+     9:     <p>
+    10:     <%= form.label :Brand_name %><br>
+    11:     <%= form.text_field :name, placeholder: "Enter Name" %>
+  
+app/views/brands/edit.html.erb:8:in `_app_views_brands_edit_html_erb__929966674668807147_70054137870520'
+Started GET "/brands/3/edit" for 127.0.0.1 at 2019-05-13 11:41:58 +0530
+Processing by BrandsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:16
+  Rendering brands/edit.html.erb within layouts/application
+  Rendered brands/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 2294ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/brands/3" for 127.0.0.1 at 2019-05-13 11:42:07 +0530
+Processing by BrandsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UkquVdPVf2LXe6KTNCA1dmKYC1L6JQ6/YFXWF8x6Gzm2F7QNaM3N3vnRsOLXE/msY0YodXzYxbGXOu/7/K9jOA==", "brand"=>{"name"=>"aaaaaaa", "description"=>"bbbbbbb"}, "button"=>"", "id"=>"3"}
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):5
+  [1m[36mBrand Update (0.3ms)[0m  [1m[33mUPDATE "brands" SET "description" = ?, "updated_at" = ? WHERE "brands"."id" = ?[0m  [["description", "bbbbbbb"], ["updated_at", "2019-05-13 06:12:33.487695"], ["id", 3]]
+  ↳ (pry):5
+  [1m[35m (96.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):5
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/brands_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/brands_controller.rb:22
+Redirected to http://localhost:3000/brands/show
+Completed 302 Found in 28718ms (ActiveRecord: 97.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-13 11:42:36 +0530
+Processing by BrandsController#show as HTML
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:10
+  Rendered brands/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 0.1ms)
+
+

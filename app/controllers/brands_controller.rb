@@ -4,19 +4,19 @@ class BrandsController < ApplicationController
 		@brand=Brand.all
 	end
 	def new
-		binding.pry
 		@brand = Brand.new
 	end
 	def create
-		binding.pry
 		@brand=Brand.new(brand_params)
 		@brand.save
 		redirect_to brands_show_path
 	end
 	def edit
+		binding.pry
 		@brand=Brand.find(params[:id])
 	end
 	def update
+		binding.pry
 		@brand = Brand.find(params[:id])
  
 	    if @brand.update(brand_params)
@@ -34,6 +34,6 @@ class BrandsController < ApplicationController
 
     private
     	def brand_params
-    		params.require(:brand).permit(:name,:description)
+    		params.require(:brand).permit(:id, :name,:description)
     	end
 end
