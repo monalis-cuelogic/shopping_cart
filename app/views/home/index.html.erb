@@ -4,8 +4,19 @@
 		<%= link_to "sign out", destroy_user_session_path , method: :delete %>
 	</li>
 	<li>
-		<%= current_user.email %>
+		<%= current_user.email %><br>
+		<h1>welcome  <%= current_user.name %></h1>
 	</li>
+    <% if current_user.role_id == 1 %>
+    <%= link_to "showBrand",brands_show_path %>
+    <% else %>
+    <%#= render home_index_path %>
+    <% end %>
+
+
+
+
+
 	<% else %>
 	<li>
 		<%= link_to "sign in",new_user_session_path %>
@@ -13,11 +24,7 @@
 	<li>
 		<%= link_to "sign up",new_user_registration_path %>
 	</li>
+	
 	<% end %>
 </ul>
-
-<%#= link_to "brand",brands_new_path %>
-
-
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= link_to "showBrand",brands_show_path %>

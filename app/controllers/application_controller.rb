@@ -3,12 +3,6 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # def authorize_admin
-  #   if !current_user.admin?
-  #     redirect_to(root_path, :notice => "Not Allowed") and return
-  #   end
-  # end
-
 	private
 	
     def storable_location?

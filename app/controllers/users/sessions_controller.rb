@@ -12,12 +12,12 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     binding.pry
-    if current_user.role_id == 1
-      redirect_to brands_show_path
-    else
-      redirect_to home_welcome_path
-    end
-    #super
+    # if current_user.role_id == 1
+    #   redirect_to brands_show_path
+    # else
+    #   redirect_to home_welcome_path
+    # end
+    super
   end
 
   # DELETE /resource/sign_out

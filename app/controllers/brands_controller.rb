@@ -1,9 +1,7 @@
 class BrandsController < ApplicationController
-    # before_action :authenticate_user!
-    # before_action :authorize_admin, :only => [:create]
-
 	def show
-
+        @user = current_user
+        redirect_to root_path, warning: "You are not authorized" unless @user.name='admin'?
 		@brand=Brand.all
 	end
 	def new
