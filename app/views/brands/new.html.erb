@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1 style="color:#000080"><center>Create Brand</center></h1>
-<%= form_for @brand, url: brands_new_path, html: { method: :post } do |form| %>
+<%= form_for @brand, url: brands_new_path, html: { method: :post, :multipart => true } do |form| %>
     <p>
     <%= form.label :Brand_name %><br>
     <%= form.text_field :name, placeholder: "Enter Name" %>

@@ -12,7 +12,6 @@ class BrandsController < ApplicationController
 		redirect_to brands_show_path
 	end
 	def edit
-		binding.pry
 		@brand=Brand.find(params[:id])
 	end
 	def update
@@ -34,6 +33,6 @@ class BrandsController < ApplicationController
 
     private
     	def brand_params
-    		params.require(:brand).permit(:id, :name,:description)
+    		params.require(:brand).permit(:id, :name, :description, :logo)
     	end
 end
