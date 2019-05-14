@@ -1,22 +1,37 @@
 class BrandsController < ApplicationController
+    before_action :authenticate_user!
 	def show
-        @user = current_user
-        redirect_to root_path, warning: "You are not authorized" unless @user.name='admin'?
-		@brand=Brand.all
+		if current_user.role_id == 1 
+			@brand=Brand.all
+		else
+			redirect_to root_path
+		end
 	end
+
 	def new
-		@brand = Brand.new
+		if current_user.role_id == 1 
+			@brand = Brand.new
+		else
+			redirect_to root_path
+		end
 	end
+
 	def create
 		@brand=Brand.new(brand_params)
 		@brand.save
 		redirect_to brands_show_path
 	end
+
 	def edit
-		@brand=Brand.find(params[:id])
+		if current_user.role_id == 1 
+			@brand=Brand.find(params[:id])
+		else
+			redirect_to root_path
+		end
+		
 	end
+
 	def update
-		binding.pry
 		@brand = Brand.find(params[:id])
  
 	    if @brand.update(brand_params)

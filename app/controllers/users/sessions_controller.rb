@@ -5,18 +5,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    binding.pry
     super
   end
 
   # POST /resource/sign_in
   def create
-    binding.pry
-    # if current_user.role_id == 1
-    #   redirect_to brands_show_path
-    # else
-    #   redirect_to home_welcome_path
-    # end
     super
   end
 
