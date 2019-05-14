@@ -37,7 +37,8 @@ class BrandsController < ApplicationController
 
     private
       def set_user!
-      	if current_user.role_id != 1
+      	role_name=Role.find_by_name("admin")
+      	if current_user.present? && current_user.role_id !=role_name.id
       		redirect_to root_path
       	end
       end
