@@ -1,5 +1,5 @@
 <h1 style="color:#000080">Create Product</h1>
-<%= form_for @product, url: products_new_path, html: { method: :post} do |form| %>
+<%= form_for @product, url: {:controller => :products, action: :update}, html: { method: :put} do |form| %>
     <p>
     <%= form.label :Product_name %><br>
     <%= form.text_field :name, placeholder: "Enter Product Name" %>
@@ -26,7 +26,8 @@
     </p>
 
     <p>
-        <%= form.file_field :images, multiple: true %>
+    <%= form.label :Images %><br>
+    <%= form.file_field :images, multiple: true %>
     </p>
 
     <%= form.button "Create Product"%>

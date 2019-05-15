@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions'}
 
   get 'products/new'
+  post 'products/new', to: 'products#create'
+  get 'products/show'
+  get 'products/:id/edit', to: 'products#edit', as: 'products_edit'
+  put 'products:id', to: 'products#update'
+  delete 'products/:id', to: 'products#destroy', as: 'products_delete'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
