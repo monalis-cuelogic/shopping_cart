@@ -39241,3 +39241,258 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:37:42 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:37:47 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:38:30 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/views/products/new.html.erb:28
+  Rendered products/new.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Brand with 'id'=all):
+  
+app/views/products/new.html.erb:28:in `block in _app_views_products_new_html_erb___1799906024946105070_70082536155320'
+app/views/products/new.html.erb:2:in `_app_views_products_new_html_erb___1799906024946105070_70082536155320'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:39:04 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `brand_name' for #<Product:0x00007f7ab93b5728>
+Did you mean?  brand_id_change):
+    25:     <%= form.text_field :size, placeholder: "Enter Product Size" %>
+    26:     </p>
+    27:     <p>
+    28:     <%= form.select(:brand_name, Brand.all, :prompt => 'Select') %>
+    29:     </p>
+    30:     <p>
+    31:         <%= form.file_field :images, multiple: true %>
+  
+app/views/products/new.html.erb:28:in `block in _app_views_products_new_html_erb___1799906024946105070_70082535224220'
+app/views/products/new.html.erb:2:in `_app_views_products_new_html_erb___1799906024946105070_70082535224220'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:39:19 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:28
+  Rendered products/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 15:40:34 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mzr+hKH+lGukMtekPEcdjYr0zgHoig0LF1rHcf2vn15rcpO+5GPrqRp+WYPfOJUrcRgYPS7zfAjppUavlelCZQ==", "product"=>{"name"=>"", "price"=>"", "quantity"=>"", "description"=>"", "size"=>"", "brand_id_change"=>"#<Brand:0x00007f7ab97e7e90>"}, "button"=>""}
+Unpermitted parameter: :brand_id_change
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 46954ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:41:24 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:28
+  Rendered products/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:44:55 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `fullname' for #<Brand:0x00007f7ab9440738>):
+    26:     </p>
+    27:     <p>
+    28:     <%#= form.select(:brand_id, Brand.all, :prompt => 'Select') %>
+    29:     <%= form.select(:brand_id, Brand.all.map{|b| [b.fullname, b.id]},
+    30:           {prompt: 'Select'}) %>
+    31:     </p>
+    32:     <p>
+  
+app/views/products/new.html.erb:29:in `block (2 levels) in _app_views_products_new_html_erb___1799906024946105070_70082535238100'
+app/views/products/new.html.erb:29:in `map'
+app/views/products/new.html.erb:29:in `block in _app_views_products_new_html_erb___1799906024946105070_70082535238100'
+app/views/products/new.html.erb:2:in `_app_views_products_new_html_erb___1799906024946105070_70082535238100'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:45:12 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 15:45:21 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N0ahGB+6C0/Ij3fuyj/xIOnbGvCmRp6QR5jfyiM1VOBvDswiWid0jXbD+ckpQHmGEjfMzGA/75O5Z14US3OJ2w==", "product"=>{"name"=>"", "price"=>"", "quantity"=>"", "description"=>"", "size"=>"", "brand_id"=>"3"}, "button"=>""}
+Unpermitted parameter: :brand_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 13386ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 15:46:26 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N0ahGB+6C0/Ij3fuyj/xIOnbGvCmRp6QR5jfyiM1VOBvDswiWid0jXbD+ckpQHmGEjfMzGA/75O5Z14US3OJ2w==", "product"=>{"name"=>"new", "price"=>"1000", "quantity"=>"2", "description"=>"new dress", "size"=>"M", "brand_id"=>"8", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007f7aa8201230 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-2962-1vkkwji.jpeg>, @original_filename="images.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"images.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007f7aa82010c8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-2962-xnv6m.jpeg>, @original_filename="fvc.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"fvc.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+Unpermitted parameter: :brand_id
+Unpermitted parameter: :brand_id
+Unpermitted parameter: :brand_id
+Unpermitted parameter: :brand_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 231921ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 15:50:35 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 267ms (Views: 221.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 15:51:10 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bwfQtRYKyIt1abnDdTLtMNkLkRpiCIthBuABX4jHdc43T72PU5e3ScslN+SWTWWWIudHJqRx+mL4H4CB4IGo9Q==", "product"=>{"name"=>"aaaa", "price"=>"100", "quantity"=>"2", "description"=>"product description", "size"=>"L", "brand_id"=>"3", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fa0f0165038 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-5472-4kefpw.jpeg>, @original_filename="index..jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"index..jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa0f0164fe8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-5472-13fp3hf.jpeg>, @original_filename="imghages.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"imghages.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 15:51:39 +0530
+Completed 500 Internal Server Error in 37569ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/products_controller.rb:33:in `[]'
+app/controllers/products_controller.rb:33:in `product_params'
+app/controllers/products_controller.rb:10:in `create'
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bwfQtRYKyIt1abnDdTLtMNkLkRpiCIthBuABX4jHdc43T72PU5e3ScslN+SWTWWWIudHJqRx+mL4H4CB4IGo9Q==", "product"=>{"name"=>"aaaa", "price"=>"100", "quantity"=>"2", "description"=>"product description", "size"=>"L", "brand_id"=>"3", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fa0f9a853a8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-5472-1hsjjo8.jpeg>, @original_filename="index..jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"index..jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007fa0f9a85358 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-5472-k6aby1.jpeg>, @original_filename="imghages.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"imghages.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:11
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "quantity", "description", "size", "created_at", "updated_at", "brand_id", "images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "aaaa"], ["price", "100"], ["quantity", 2], ["description", "product description"], ["size", "L"], ["created_at", "2019-05-15 10:22:00.406444"], ["updated_at", "2019-05-15 10:22:00.406444"], ["brand_id", 3], ["images", "[\"index..jpeg\",\"imghages.jpeg\"]"]]
+  ↳ app/controllers/products_controller.rb:11
+  [1m[35m (70.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:11
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 12466ms (ActiveRecord: 72.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "roles"[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "roles"."name" FROM "roles"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "roles"."name", "roles"."id" FROM "roles"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "roles"."name" FROM "roles"[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/products/new." for 127.0.0.1 at 2019-05-15 16:03:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/new."):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:03:13 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 56ms (Views: 36.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:03:20 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:19:58 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:20:09 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.2ms)
+
+

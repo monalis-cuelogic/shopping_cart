@@ -37,11 +37,12 @@ class BrandsController < ApplicationController
 
     private
       def set_user!
-        role_name=Role.find_by_name("admin")
-        if current_user.present? && current_user.role_id !=role_name.id
+        admin = Role.find_by_name("admin")
+        if current_user.present? && current_user.role_id != admin.id
           redirect_to root_path
         end
       end
+
       def brand_params
         params.require(:brand).permit(:id, :name, :description, :logo)
       end
