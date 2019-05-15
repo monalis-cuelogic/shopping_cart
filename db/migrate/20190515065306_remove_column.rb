@@ -1,5 +1,5 @@
 class RemoveColumn < ActiveRecord::Migration[5.2]
   def change
-  	t.remove :role_id
+  	remove_column :products, :type, :string
   end
 end

@@ -38307,3 +38307,211 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/products/new" for 127.0.0.1 at 2019-05-14 20:21:10 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @brand, url: brands_new_path do |form| %>
+    2:     <p>
+    3:     <%= form.label :Product_name %><br>
+    4:     <%= form.text_field :name, placeholder: "Enter Product Name" %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___4054172556728838913_70113741034900'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-14 20:21:33 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @brand, url: products_new_path do |form| %>
+    2:     <p>
+    3:     <%= form.label :Product_name %><br>
+    4:     <%= form.text_field :name, placeholder: "Enter Product Name" %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___4054172556728838913_70113743312540'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-14 20:23:00 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @brand, url: products_new_path, html: { method: :get} do |form| %>
+    2:     <p>
+    3:     <%= form.label :Product_name %><br>
+    4:     <%= form.text_field :name, placeholder: "Enter Product Name" %>
+  
+app/views/products/new.html.erb:1:in `_app_views_products_new_html_erb___4054172556728838913_70113735640140'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-14 20:23:42 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrand Create (0.5ms)[0m  [1m[32mINSERT INTO "brands" ("name", "description", "created_at", "updated_at", "logo") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brand 1"], ["description", "shoes"], ["created_at", "2019-05-15 05:40:40.526226"], ["updated_at", "2019-05-15 05:40:40.526226"], ["logo", "index..jpeg"]]
+  [1m[35m (67.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBrand Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "brands" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  [1m[36mBrand Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "brands" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."brand_id" = ? LIMIT ?[0m  [["brand_id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."brand_id" = ?[0m  [["brand_id", 3]]
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."brand_id" = ? LIMIT ?[0m  [["brand_id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at", "brand_id") VALUES (?, ?, ?, ?)[0m  [["name", "new brand product"], ["created_at", "2019-05-15 05:42:52.389901"], ["updated_at", "2019-05-15 05:42:52.389901"], ["brand_id", 8]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "new brand product 1"], ["updated_at", "2019-05-15 05:43:00.931597"], ["id", 2]]
+  [1m[35m (78.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at", "brand_id") VALUES (?, ?, ?, ?)[0m  [["name", "new brand product 2"], ["created_at", "2019-05-15 05:43:24.084154"], ["updated_at", "2019-05-15 05:43:24.084154"], ["brand_id", 8]]
+  [1m[35m (77.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."brand_id" = ? LIMIT ?[0m  [["brand_id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."brand_id" = ?[0m  [["brand_id", 3]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."brand_id" = ? LIMIT ?[0m  [["brand_id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."brand_id" = ?[0m  [["brand_id", 8]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" ORDER BY "brands"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-05-15 11:44:52 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 11:44:52 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 431ms (Views: 415.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 11:45:06 +0530
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemovetypeFromproducts (20190515062559)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515062559"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (98.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "products"."brand_id" FROM "products"[0m
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."brand_id" = ? LIMIT ?[0m  [["brand_id", 8], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "products"."name" FROM "products" WHERE "products"."brand_id" = ?[0m  [["brand_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveColumn (20190515065306)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to RemoveColumn (20190515065306)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "quantity" integer DEFAULT NULL, "description" varchar DEFAULT NULL, "size" varchar DEFAULT NULL, "type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "brand_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_brand_id" ON "aproducts" ("brand_id")[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","price","quantity","description","size","type","created_at","updated_at","brand_id")
+                     SELECT "id","name","price","quantity","description","size","type","created_at","updated_at","brand_id" FROM "products"[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "quantity" integer DEFAULT NULL, "description" varchar DEFAULT NULL, "size" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "brand_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_products_on_brand_id" ON "products" ("brand_id")[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "products" ("id","name","price","quantity","description","size","created_at","updated_at","brand_id")
+                     SELECT "id","name","price","quantity","description","size","created_at","updated_at","brand_id" FROM "aproducts"[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20190515065306_remove_column.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515065306"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (81.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273

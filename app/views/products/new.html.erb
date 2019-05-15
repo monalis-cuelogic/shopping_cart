@@ -1,7 +1,32 @@
-<%= form_for do |form| %>
+<%= form_for @product, url: products_new_path, html: { method: :get} do |form| %>
     <p>
     <%= form.label :Product_name %><br>
     <%= form.text_field :name, placeholder: "Enter Product Name" %>
+    </p>
+
+    <p>
+    <%= form.label :Price %><br>
+    <%= form.text_field :price, placeholder: "Enter Price" %>
+    </p>
+
+    <p>
+    <%= form.label :Quantity %><br>
+    <%= form.text_field :quantity, placeholder: "Enter Quantity" %>
+    </p>
+
+    <p>
+    <%= form.label :Description %><br>
+    <%= form.text_field :description, placeholder: "Enter Product Description" %>
+    </p>
+
+    <p>
+    <%= form.label :Size %><br>
+    <%= form.text_field :size, placeholder: "Enter Product Size" %>
+    </p>
+
+    <p>
+    <%= form.label :Type %><br>
+    <%= form.text_field :type, placeholder: "Enter Product Type" %>
     </p>
 
     

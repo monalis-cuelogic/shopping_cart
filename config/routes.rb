@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   delete 'brands/:id', to: 'brands#destroy', as: 'brands_delete'
   devise_for :users, controllers: { sessions: 'users/sessions'}
 
+  get 'products/new'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
