@@ -9,9 +9,69 @@
 	</li>
     <% if current_user.role_id == 1 %>
     <%= link_to "showBrand",brands_show_path %>
-    <% else %>
-    <%#= render home_index_path %>
+    <table>
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Size</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% Product.all.each do |product| %>
+    <tr>
+      <td><%= image_tag product.images.first.thumb.url %></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.size %></td>
+      <td><%= product.description %></td>
+      <td><%= link_to 'Update', products_edit_path(product)%></td>
+      <td><%= link_to 'Delete', products_delete_path(product),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <%# product.images.each do |img| %>
+      <%#= image_tag img.thumb.url %>
+    <%# end %>
+  <% end %>
+</table>
     <% end %>
+
+
+
+
+
+    <% if current_user.role_id == 2 %>.
+    <table>
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Size</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% Product.all.each do |product| %>
+    <tr>
+      <td><%= image_tag product.images.first.thumb.url %></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.size %></td>
+      <td><%= product.description %></td>
+
+    </tr>
+  <% end %>
+</table>
+    <% end %>
+
+
 
 
 	<% else %>
@@ -24,3 +84,4 @@
 	
 	<% end %>
 </ul>
+

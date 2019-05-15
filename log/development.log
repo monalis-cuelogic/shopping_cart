@@ -39496,3 +39496,2144 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:28:53 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:34
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 61ms (Views: 29.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:29:18 +0530
+Processing by ProductsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 16:29:18 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 73ms (Views: 56.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 16:29:22 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5RWxmRzdxFD2S5+fUiSfWwilYwaj8Tsta6S7xu1rBg+9XdyjWUC7kkgHEbixWxf980m1OmWISi6VWzoYhS3bNA==", "user"=>{"email"=>"ashwini@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ashwini@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/products/new
+Completed 302 Found in 245ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:29:23 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+Redirected to http://localhost:3000/
+Filter chain halted as :set_user! rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:29:23 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:29:34 +0530
+Processing by ProductsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+Redirected to http://localhost:3000/
+Filter chain halted as :set_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:29:34 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:34:04 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/monali/monali/Rails/shopping_cart/app/views"
+  * "/home/monali/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views"
+):
+    24: 	
+    25: 	<% end %>
+    26: </ul>
+    27: <%= render 'products/show' %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb__2472030562223747276_70164599822540'
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:35:02 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/monali/monali/Rails/shopping_cart/app/views"
+  * "/home/monali/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views"
+):
+    24: 	
+    25: 	<% end %>
+    26: </ul>
+    27: <%= render 'products/show' %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb__2472030562223747276_70164601588720'
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:35:19 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/monali/monali/Rails/shopping_cart/app/views"
+  * "/home/monali/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views"
+):
+    24: 	
+    25: 	<% end %>
+    26: </ul>
+    27: <% render 'products/show' %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb__2472030562223747276_70164601299680'
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:35:28 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:35:43 +0530
+Processing by ProductsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 48ms (Views: 40.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 16:35:49 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+Redirected to http://localhost:3000/
+Filter chain halted as :set_user! rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:35:49 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:45:08 +0530
+Processing by ProductsController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007fa0f98945d0>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.url.to_s %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb___199741473472436025_70164678971800'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb___199741473472436025_70164678971800'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:45:49 +0530
+Processing by ProductsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007fa0f983e310>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.url %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb___199741473472436025_70164678593140'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb___199741473472436025_70164678593140'
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:45:57 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 16:45:59 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BaFZzNY4Fkxo2QTwtIoET2JfZHLjhx/Wb13d7tKuyRPv7efnAz8LMCXsq8f724r5Xq2lg+rVXBgCrbeWG1hDpA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 16:45:59 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 16:45:59 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:47:01 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007fa0f01632d8>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.url %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb___199741473472436025_70164678939900'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb___199741473472436025_70164678939900'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 16:49:43 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007fa0f93b3bb0>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.url(:original) %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb___199741473472436025_70164676307160'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb___199741473472436025_70164676307160'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:47:29 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `images' for #<Product::ActiveRecord_Relation:0x00007fa0f8bea000>):
+    25: 
+    26:     </tr>
+    27:   <% end %>
+    28:   <% @product.images.each do |img| %>
+    29:   <%= image_tag image.url %>
+    30: <% end %>
+    31: </table>
+  
+app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___199741473472436025_70164672402420'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:47:51 +0530
+Processing by ProductsController#show as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ (pry):7
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:50:04 +0530
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 137044ms (Views: 23.9ms | ActiveRecord: 1.4ms)
+
+
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 936ms (Views: 30.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:50:37 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 4360ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `images' for #<Product::ActiveRecord_Relation:0x00007fa0f03d46c0>):
+    25: 
+    26:     </tr>
+    27:   <% end %>
+    28:   <% @product.images.each do |img| %>
+    29:     <%= image_tag image.url %>
+    30:   <% end %>
+    31: </table>
+  
+app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___199741473472436025_70164601059680'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:52:35 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 2123ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `images' for #<Product::ActiveRecord_Relation:0x00007fa0f04c0660>):
+    25: 
+    26:     </tr>
+    27:   <% end %>
+    28:   <%= @product.images %>
+    29: </table>
+  
+app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb___199741473472436025_70164601534680'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:53:02 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (10156.1ms)
+Completed 200 OK in 18064ms (Views: 10179.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:54:42 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (262.8ms)
+Completed 500 Internal Server Error in 2267ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `image' for #<#<Class:0x00007fa0f98eb1c8>:0x00007fa0f98e9260>
+Did you mean?  img):
+    25: 
+    26:     </tr>
+    27:     <% product.images.each do |img| %>
+    28:       <%= image_tag image.url %>
+    29:     <% end %>
+    30:   <% end %>
+    31: 
+  
+app/views/products/show.html.erb:28:in `block (2 levels) in _app_views_products_show_html_erb___199741473472436025_70164679187780'
+app/views/products/show.html.erb:27:in `each'
+app/views/products/show.html.erb:27:in `block in _app_views_products_show_html_erb___199741473472436025_70164679187780'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb___199741473472436025_70164679187780'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:55:03 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1992ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:56:39 +0530
+Processing by ProductsController#show as HTML
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:56:39 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 3487ms (Views: 23.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/uploads/product/images/5/index.jpeg" for 127.0.0.1 at 2019-05-15 17:58:45 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/product/images/5/index.jpeg"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 17:59:48 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 4496ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+
+
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 242228ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:02:57 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 3763ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Destroy (120.2ms)[0m  [1m[31mDELETE FROM "products"[0m
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:04:33 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 10576ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 18:12:27 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+LoadError (cannot load such file -- mini_magick (You may need to install the mini_magick gem)):
+  
+app/uploaders/image_uploader.rb:4:in `include'
+app/uploaders/image_uploader.rb:4:in `<class:ImageUploader>'
+app/uploaders/image_uploader.rb:1:in `<main>'
+app/models/product.rb:3:in `<class:Product>'
+app/models/product.rb:1:in `<main>'
+app/controllers/products_controller.rb:9:in `new'
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 18:13:01 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 427ms (Views: 378.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 18:16:22 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"annP80AUxlgA3zMQcrceERAZjQpttkH8v8CV6cRW9EDEHdIsSQdq4AfEYXoj+yI77Fd34P9bFbBEnhiOCenC6g==", "product"=>{"name"=>"shirt", "price"=>"200", "quantity"=>"2", "description"=>"cotton shirt", "size"=>"M", "brand_id"=>"3", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007feff415da38 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-yzqn2l.png>, @original_filename="shirt3.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"shirt3.png\"\r\nContent-Type: image/png\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feff415d9e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-38akly.jpeg>, @original_filename="shirt2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"shirt2.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feff415d998 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-1d9hbnr.jpeg>, @original_filename="shirt1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"shirt1.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "quantity", "description", "size", "created_at", "updated_at", "brand_id", "images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shirt"], ["price", "200"], ["quantity", 2], ["description", "cotton shirt"], ["size", "M"], ["created_at", "2019-05-15 12:46:33.052337"], ["updated_at", "2019-05-15 12:46:33.052337"], ["brand_id", 3], ["images", "[\"shirt3.png\",\"shirt2.jpeg\",\"shirt1.jpeg\"]"]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[35m (77.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:14
+Redirected to http://localhost:3000/brands/show
+Completed 302 Found in 11100ms (ActiveRecord: 78.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-15 18:16:33 +0530
+Processing by BrandsController#show as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:16:33 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 51ms (Views: 28.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products.show" for 127.0.0.1 at 2019-05-15 18:16:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products.show"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:16:57 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 3404ms (Views: 26.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:17:53 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 13901ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 18:18:26 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 18:21:10 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V2Kj+4e4lYNfI49lho558LrfgPNl3qnbXL48irvTp3X5Br4kjqs5O1g43Q/XwkXaRpF6Gfcz/Zen4LHtdmyR3w==", "product"=>{"name"=>"shoes", "price"=>"1000", "quantity"=>"2", "description"=>"watch", "size"=>"any size", "brand_id"=>"3", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007feff485a8b8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-1bsvk9g.jpeg>, @original_filename="watch2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"watch2.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feff485a868 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-1ozeaha.jpeg>, @original_filename="watch1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"watch1.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feff485a818 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-1lk4cih.jpeg>, @original_filename="watch.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"watch.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "quantity", "description", "size", "created_at", "updated_at", "brand_id", "images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "shoes"], ["price", "1000"], ["quantity", 2], ["description", "watch"], ["size", "any size"], ["created_at", "2019-05-15 12:51:14.457829"], ["updated_at", "2019-05-15 12:51:14.457829"], ["brand_id", 3], ["images", "[\"watch2.jpeg\",\"watch1.jpeg\",\"watch.jpeg\"]"]]
+  ↳ app/controllers/products_controller.rb:14
+  [1m[35m (64.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:14
+Redirected to http://localhost:3000/products/show
+Completed 302 Found in 4348ms (ActiveRecord: 67.8ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:21:14 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4946ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:22:35 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 2491ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:22:51 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 18:22:53 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 44ms (Views: 31.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/brands/new" for 127.0.0.1 at 2019-05-15 18:24:55 +0530
+Processing by BrandsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:24:55 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 44ms (Views: 27.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:25:01 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ag+5DJZdJQt6eEMc1+TFlP+3XQeI0iqsg4l0ezJRt7TEa6TTn06Js31jEXaGqPm+A/mn7Ro/fuB41/kc/+6BHg==", "user"=>{"email"=>"monali@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "monali@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/brands/new
+Completed 302 Found in 311ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/brands/new" for 127.0.0.1 at 2019-05-15 18:25:01 +0530
+Processing by BrandsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:40
+  Rendering brands/new.html.erb within layouts/application
+  Rendered brands/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/brands/new" for 127.0.0.1 at 2019-05-15 18:25:22 +0530
+Processing by BrandsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dc+McyIXgQ+9OMvbl7zSkz5wAmOP41hRQyEI75RpzoUP2BwjtmVu1ZbzNMVIHSa8PktI1YfDkJC4h3x4cYMuMw==", "brand"=>{"name"=>"samsung", "description"=>"samsung description"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/brands_controller.rb:14
+  [1m[36mBrand Create (0.5ms)[0m  [1m[32mINSERT INTO "brands" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "samsung"], ["description", "samsung description"], ["created_at", "2019-05-15 12:55:22.094602"], ["updated_at", "2019-05-15 12:55:22.094602"]]
+  ↳ app/controllers/brands_controller.rb:14
+  [1m[35m (149.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/brands_controller.rb:14
+Redirected to http://localhost:3000/brands/show
+Completed 302 Found in 155ms (ActiveRecord: 149.7ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-15 18:25:22 +0530
+Processing by BrandsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:40
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:11
+  Rendered brands/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/uploads/brand/logo/8/index..jpeg" for 127.0.0.1 at 2019-05-15 18:25:22 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/brand/logo/8/index..jpeg"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 18:25:30 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bv6yYGSYcmt7uNQG4rrxq1OWQDh9iSpVmYTggajtqups6SIw8OqdsVBzKxg9GwWEU60KjnWp4pRiIpQWTQdKXA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:25:30 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:25:30 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:25:41 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-05-15 18:25:43 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/products/new.html.erb:29
+  Rendered products/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/products/new" for 127.0.0.1 at 2019-05-15 18:26:45 +0530
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g5WQ3hn/K7OoChJFktK9lI4OgWFp86rj4ueDYBaI8m7zcDo8gx3/9uY4wdKMyigX+yVqrck/bCprwhSVFyAWAw==", "product"=>{"name"=>"mobile", "price"=>"1200", "quantity"=>"1", "description"=>"watches", "size"=>"", "brand_id"=>"9", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007feffc018ff8 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-zqnv9p.jpeg>, @original_filename="mobile3.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"mobile3.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feffc018f80 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-g690q4.jpeg>, @original_filename="mobile2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"mobile2.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feffc018f30 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-286780.jpeg>, @original_filename="mobile1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"mobile1.jpeg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007feffc018ee0 @tempfile=#<Tempfile:/tmp/RackMultipart20190515-10359-11kc333.jpeg>, @original_filename="mobile.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"product[images][]\"; filename=\"mobile.jpeg\"\r\nContent-Type: image/jpeg\r\n">]}, "button"=>""}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:13
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT  "brands".* FROM "brands" WHERE "brands"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:13
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "quantity", "description", "size", "created_at", "updated_at", "brand_id", "images") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "mobile"], ["price", "1200"], ["quantity", 1], ["description", "watches"], ["size", ""], ["created_at", "2019-05-15 12:57:49.574542"], ["updated_at", "2019-05-15 12:57:49.574542"], ["brand_id", 9], ["images", "[\"mobile3.jpeg\",\"mobile2.jpeg\",\"mobile1.jpeg\",\"mobile.jpeg\"]"]]
+  ↳ app/controllers/products_controller.rb:13
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:13
+Redirected to http://localhost:3000/products/show
+Completed 302 Found in 64564ms (ActiveRecord: 83.9ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:27:49 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:29:51 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (142634.0ms)
+Completed 200 OK in 142658ms (Views: 142657.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:32:29 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2019-05-15 18:35:03 +0530
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2019-05-15 18:35:19 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/1/show" for 127.0.0.1 at 2019-05-15 18:35:24 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/1/show"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/1/edit" for 127.0.0.1 at 2019-05-15 18:35:29 +0530
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2019-05-15 18:35:35 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/products/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:36:04 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:36:04 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:36:15 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j+oHaqGbEl00EGfW+z+VAwsjgw4nNtnfIzdwzywA8dDJ/BVQp4QYGnqzQFU9xn3RLciWhRdJamguTVNuOFPBhQ==", "user"=>{"email"=>"ashwini.mandal@cuelogic.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ashwini.mandal@cuelogic.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j+oHaqGbEl00EGfW+z+VAwsjgw4nNtnfIzdwzywA8dDJ/BVQp4QYGnqzQFU9xn3RLciWhRdJamguTVNuOFPBhQ==", "user"=>{"email"=>"ashwini.mandal@cuelogic.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 164ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:36:28 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNUMqgUmmw5A5AdkPMh3xRphagnZ6zIJ9n8b89RPQ9Lqwx6QAzmRSQ5HIOf6MZ8XPIp/gumUgb77BThSwBxzhw==", "user"=>{"email"=>"monali@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "monali@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:36:28 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/brands/show" for 127.0.0.1 at 2019-05-15 18:36:32 +0530
+Processing by BrandsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:40
+  Rendering brands/show.html.erb within layouts/application
+  [1m[36mBrand Load (0.1ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/brands/show.html.erb:11
+  Rendered brands/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/uploads/brand/logo/8/index..jpeg" for 127.0.0.1 at 2019-05-15 18:36:32 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/brand/logo/8/index..jpeg"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:36:45 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:36:57 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2019-05-15 18:39:03 +0530
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2019-05-15 18:39:20 +0530
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:17
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:39:24 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 18:39:25 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lUqs5oAWr+n1msIp5tEHGOn0cXAiuiRTZ75ffe+KPDVd401831O/F9+ch/Xw3I2VHUBqeBaTVzf29bIQLHG9Pw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:39:25 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:39:25 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:39:33 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KKeuvlfcDxcrfMpnL/xm+xq4h3boebfet7k3PENfydV2q/0Oni02KH+mmgGvTZ+oszkegcfBNDf3ehi6hyf+0Q==", "user"=>{"email"=>"ashwini@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ashwini@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 302 Found in 147ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:39:33 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2019-05-15 18:39:36 +0530
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? LIMIT ?[0m  [["name", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:35
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36
+Redirected to http://localhost:3000/
+Filter chain halted as :set_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:39:36 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 18:43:03 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xn+4o6fIihKvePgAGkk9SQsXDLof1aQgmdnxmF7EK2wO1lk5+I2a7IV+vdwMRLfE/6MXsiv810QIkhz1nT+qZg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.6.2) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for 127.0.0.1 at 2019-05-15 18:43:23 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:43:31 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 18:43:33 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SK+5oWqeRlXeDvtSZWAYt+uQx2L2D7fro1mL4RgkckJ6Wb8ct2+MDPSulVkUyFmzz3LiXW7B/PRfZlURHrC8oQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:43:33 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:43:33 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:43:49 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:53:52 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007feff4931688>):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.url %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb__4131157249453606376_70334288499400'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__4131157249453606376_70334288499400'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:54:12 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<Product:0x00007feff4150ce8>
+Did you mean?  images
+               images?
+               images=):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.image.url %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb__4131157249453606376_70334284112880'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__4131157249453606376_70334284112880'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:54:27 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for #<ImageUploader:0x00007feff94ffcb8>
+Did you mean?  to_xml):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb__4131157249453606376_70334328182440'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__4131157249453606376_70334328182440'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:54:42 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (The asset "[" is not present in the asset pipeline.):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.to_s %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb__4131157249453606376_70334332800180'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__4131157249453606376_70334332800180'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:54:44 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:13
+  Rendered products/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "[" is not present in the asset pipeline.):
+    17:       <td><%= product.quantity %></td>
+    18:       <td><%= product.size %></td>
+    19:       <td><%= product.description %></td>
+    20:       <td><%= image_tag product.images.to_s %></td>
+    21:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    22:       <td><%= link_to 'Delete', products_delete_path(product),
+    23:               method: :delete,
+  
+app/views/products/show.html.erb:20:in `block in _app_views_products_show_html_erb__4131157249453606376_70334289692920'
+app/views/products/show.html.erb:13:in `_app_views_products_show_html_erb__4131157249453606376_70334289692920'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:56:00 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for #<Array:0x00007feff48711a8>):
+    18:       <td><%= product.quantity %></td>
+    19:       <td><%= product.size %></td>
+    20:       <td><%= product.description %></td>
+    21:       <td><%= image_tag product.images.url %></td>
+    22:       <td><%= link_to 'Update', products_edit_path(product)%></td>
+    23:       <td><%= link_to 'Delete', products_delete_path(product),
+    24:               method: :delete,
+  
+app/views/products/show.html.erb:21:in `block in _app_views_products_show_html_erb__4131157249453606376_70334288143760'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334288143760'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:56:18 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:56:47 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 18:59:54 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 18:59:54 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 18:59:54 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:00:09 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:00:09 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:00:09 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:00:11 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:00:11 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:00:11 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:01:13 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (271.5ms)
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `first' for #<#<Class:0x00007feff9921c38>:0x00007feff4b5b288>):
+    14:   <% @products.each do |product| %>
+    15:     <tr>
+    16:       <td><% product.images.each do |img| %>
+    17:       <%= image_tag first.img.url %>
+    18:       <% end %></td>
+    19:       <td><%= product.name %></td>
+    20:       <td><%= product.price %></td>
+  
+app/views/products/show.html.erb:17:in `block (2 levels) in _app_views_products_show_html_erb__4131157249453606376_70334289731500'
+app/views/products/show.html.erb:16:in `each'
+app/views/products/show.html.erb:16:in `block in _app_views_products_show_html_erb__4131157249453606376_70334289731500'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334289731500'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:01:23 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:01:23 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:01:23 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:02:17 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (289.7ms)
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `first' for #<#<Class:0x00007feff9921c38>:0x00007feff422f240>):
+    14:   <% @products.each do |product| %>
+    15:     <tr>
+    16:       <td><% product.images.each do |img| %>
+    17:       <%= image_tag first.try(:img.url) %>
+    18:       <% end %></td>
+    19:       <td><%= product.name %></td>
+    20:       <td><%= product.price %></td>
+  
+app/views/products/show.html.erb:17:in `block (2 levels) in _app_views_products_show_html_erb__4131157249453606376_70334284947720'
+app/views/products/show.html.erb:16:in `each'
+app/views/products/show.html.erb:16:in `block in _app_views_products_show_html_erb__4131157249453606376_70334284947720'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334284947720'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:02:38 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for :img:Symbol):
+    14:   <% @products.each do |product| %>
+    15:     <tr>
+    16:       <td><% product.images.each do |img| %>
+    17:       <%= image_tag (:img.url).first.try %>
+    18:       <% end %></td>
+    19:       <td><%= product.name %></td>
+    20:       <td><%= product.price %></td>
+  
+app/views/products/show.html.erb:17:in `block (2 levels) in _app_views_products_show_html_erb__4131157249453606376_70334330301440'
+app/views/products/show.html.erb:16:in `each'
+app/views/products/show.html.erb:16:in `block in _app_views_products_show_html_erb__4131157249453606376_70334330301440'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334330301440'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:02:49 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `first' for :img:Symbol):
+    14:   <% @products.each do |product| %>
+    15:     <tr>
+    16:       <td><% product.images.each do |img| %>
+    17:       <%= image_tag (:img).first.try %>
+    18:       <% end %></td>
+    19:       <td><%= product.name %></td>
+    20:       <td><%= product.price %></td>
+  
+app/views/products/show.html.erb:17:in `block (2 levels) in _app_views_products_show_html_erb__4131157249453606376_70334285569760'
+app/views/products/show.html.erb:16:in `each'
+app/views/products/show.html.erb:16:in `block in _app_views_products_show_html_erb__4131157249453606376_70334285569760'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334285569760'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:03:00 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:03:00 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:03:00 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:03:46 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (272287.0ms)
+Completed 200 OK in 272311ms (Views: 272309.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:08:19 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:08:19 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:08:21 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (2718.7ms)
+Completed 200 OK in 2739ms (Views: 2738.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:08:24 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:08:24 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:08:53 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:09:06 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `thumb' for "/uploads/product/images/1/shirt3.png":String):
+    15:     <tr>
+    16:       <tr>
+    17:       <td><% product.images.each do |img| %>
+    18:       <%= image_tag img.url.thumb %>
+    19:       <% end %></td>
+    20:       <td><%= product.name %></td>
+    21:       <td><%= product.price %></td>
+  
+app/views/products/show.html.erb:18:in `block (2 levels) in _app_views_products_show_html_erb__4131157249453606376_70334331220920'
+app/views/products/show.html.erb:17:in `each'
+app/views/products/show.html.erb:17:in `block in _app_views_products_show_html_erb__4131157249453606376_70334331220920'
+app/views/products/show.html.erb:14:in `_app_views_products_show_html_erb__4131157249453606376_70334331220920'
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:09:23 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:09:47 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:09:47 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:09:47 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:10:01 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:27:05 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (131435.2ms)
+Completed 200 OK in 131493ms (Views: 131491.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:29:22 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (5267.1ms)
+Completed 200 OK in 5293ms (Views: 5291.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:29:54 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3531.3ms)
+Completed 200 OK in 3555ms (Views: 3553.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:31:13 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (16839.0ms)
+Completed 200 OK in 16879ms (Views: 16877.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/show" for 127.0.0.1 at 2019-05-15 19:32:28 +0530
+Processing by ProductsController#show as HTML
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/show.html.erb:14
+  Rendered products/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:33:14 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:33:14 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:33:18 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8eR6+CjymaSnXLPMB+CgHk/6Jm/SgrwO05oaR/3uc6+QJUQnp5w6hjO66IO13cC21fxUXfikS/6SX06UVjvQWg==", "user"=>{"email"=>"ashwini@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ashwini@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:33:18 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    38:     <th></th>
+    39:   </tr>
+    40:  
+    41:   <% @products.each do |product| %>
+    42:     <tr>
+    43:       <td><%= image_tag product.images.first.thumb.url %></td>
+    44:       <td><%= product.name %></td>
+  
+app/views/home/index.html.erb:41:in `_app_views_home_index_html_erb__2815286438074430941_70334284692880'
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:35:15 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/monali/monali/Rails/shopping_cart/app/views/home/index.html.erb:51: syntax error, unexpected else, expecting end
+'.freeze;	 else 
+         	 ^~~~
+/home/monali/monali/Rails/shopping_cart/app/views/home/index.html.erb:64: syntax error, unexpected ensure, expecting end
+          ensure
+          ^~~~~~
+/home/monali/monali/Rails/shopping_cart/app/views/home/index.html.erb:66: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/home/index.html.erb:51: syntax error, unexpected else, expecting end
+app/views/home/index.html.erb:64: syntax error, unexpected ensure, expecting end
+app/views/home/index.html.erb:66: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:36:15 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:36:57 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    23:     <th></th>
+    24:   </tr>
+    25:  
+    26:   <% @products.each do |product| %>
+    27:     <tr>
+    28:       <td><%= image_tag product.images.first.thumb.url %></td>
+    29:       <td><%= product.name %></td>
+  
+app/views/home/index.html.erb:26:in `_app_views_home_index_html_erb__2815286438074430941_70334327292620'
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:37:11 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    23:     <th></th>
+    24:   </tr>
+    25:  
+    26:   <%= @products.each do |product| %>
+    27:     <tr>
+    28:       <td><%= image_tag product.images.first.thumb.url %></td>
+    29:       <td><%= product.name %></td>
+  
+app/views/home/index.html.erb:26:in `_app_views_home_index_html_erb__2815286438074430941_70334331522780'
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:37:58 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:40:48 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:41:45 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:42:03 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:42:22 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:42:25 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:43:50 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:44:02 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:26
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-05-15 19:44:09 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N47lrB81BEbPu8Kp5KocBJRC0NoakVD2sIZeUtQjNAREJRPwRcKd3V48Yas++dEMLvNiUYyFz/DxSXsywozM3Q=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:44:09 +0530
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:44:09 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-05-15 19:44:13 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+EhIaPIjdUGriGlZJiqYSvV/jMJvgIRiwOsPB1pMFQ//1cXsSy+oCUUHvgv2pifoIwNc7MlbCazCAu3etYs+pw==", "user"=>{"email"=>"monali@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "monali@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:44:13 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:45:04 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/monali/monali/Rails/shopping_cart/app/views/home/index.html.erb:72: else without rescue is useless
+'.freeze;	 else 
+         	 ^~~~
+/home/monali/monali/Rails/shopping_cart/app/views/home/index.html.erb:85: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/home/index.html.erb:72: else without rescue is useless
+app/views/home/index.html.erb:85: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:46:00 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-15 19:46:28 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/monali/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/index.html.erb:23
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+

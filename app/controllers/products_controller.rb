@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
+  # before_action :authenticate_user!
+  before_action :set_user!, except: [:show]
   def show
-    @product = Product.all
+    @products = Product.all
   end
   def new
     @product=Product.new
@@ -9,7 +11,7 @@ class ProductsController < ApplicationController
     binding.pry
     @product = Product.new(product_params)
     @product.save
-    redirect_to brands_show_path
+    redirect_to products_show_path
   end
   def edit
     @product = Product.find(params[:id])
@@ -29,6 +31,12 @@ class ProductsController < ApplicationController
 
   end
   private
+    def set_user!
+        admin = Role.find_by_name("admin")
+        if current_user.present? && current_user.role_id != admin.id
+          redirect_to root_path
+        end
+      end
     def product_params
       params.require(:product).permit(:id, :name, :price, :brand_id, :quantity, :description, :size, {images: []})
     end

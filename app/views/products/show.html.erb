@@ -2,6 +2,7 @@
  
 <table>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th>Price</th>
     <th>Quantity</th>
@@ -10,8 +11,9 @@
     <th></th>
   </tr>
  
-  <% @product.each do |product| %>
+  <% @products.each do |product| %>
     <tr>
+      <td><%= image_tag product.images.first.thumb.url %></td>
       <td><%= product.name %></td>
       <td><%= product.price %></td>
       <td><%= product.quantity %></td>
@@ -23,5 +25,10 @@
               data: { confirm: 'Are you sure?' } %></td>
 
     </tr>
+    <%# product.images.each do |img| %>
+      <%#= image_tag img.thumb.url %>
+    <%# end %>
   <% end %>
 </table>
+
+<%= link_to "Create Product", products_new_path %>
