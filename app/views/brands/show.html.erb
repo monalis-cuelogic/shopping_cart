@@ -12,7 +12,7 @@
     <tr>
       <td><%= brand.name %></td>
       <td><%= brand.description %></td>
-      <td><%= image_tag brand.logo.url.to_s %></td>
+      <td><%= image_tag brand.logo.thumb.url.to_s %></td>
       <td><%= link_to 'Update', brands_edit_path(brand)%></td>
       <td><%= link_to 'Delete', brands_delete_path(brand),
               method: :delete,

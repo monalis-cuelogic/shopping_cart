@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   put 'products:id', to: 'products#update'
   delete 'products/:id', to: 'products#destroy', as: 'products_delete'
 
+  get '*path' => redirect('/')
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
