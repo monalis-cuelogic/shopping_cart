@@ -1,5 +1,6 @@
-<!-- <h1>Listing Products</h1>
- 
+<% if current_user.role_id != 2%>
+    <%= link_to 'Create Product',products_new_path %>
+    <% end%>
 <table>
   <tr>
     <th>Image</th>
@@ -10,7 +11,7 @@
     <th>Description</th>
     <th></th>
   </tr>
-   <% @products.each do |product| %>
+  <% @products.each do |product| %>
     <tr>
       <td><%= image_tag product.images.first.thumb.url %></td>
       <td><%= product.name %></td>
@@ -18,15 +19,20 @@
       <td><%= product.quantity %></td>
       <td><%= product.size %></td>
       <td><%= product.description %></td>
+      <% if current_user.role_id == 1%>
       <td><%= link_to 'Update', products_edit_path(product)%></td>
       <td><%= link_to 'Delete', products_delete_path(product),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
 
+
+      <% end%>
+
     </tr>
+    
+
+
   <% end %>
+
 </table>
 
-<%= link_to "Create Product", products_new_path %>
- -->
- <%= render "shared/show"%>

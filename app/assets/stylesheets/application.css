@@ -29,3 +29,22 @@ th {
   background-color: #4CAF50;
   color: white;
 }
+ header {   
+      position: -webkit-sticky;
+      top: 0;
+      position: sticky;
+      background-color:   #34495e;
+      padding: 20px;
+      text-align: right;
+      font-size: 10px;
+      color: white;
+    }
+    footer {
+      position: -webkit-sticky;
+      bottom: 0;
+      position: sticky;
+      background-color:   #34495e;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }

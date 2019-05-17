@@ -1,80 +1,36 @@
-<ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index_home</title>
+</head>
+<body>
   <% if user_signed_in? %>
-    <li>
-    <%= link_to "sign out", destroy_user_session_path , method: :delete %>
-    </li>
-    <li>
-    <%= current_user.email %><br>
-    <h1>welcome  <%= current_user.name %></h1>
-    </li>
+    
+    <header>
+      <div style="text-align: left">
+        <h2 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
+        <%= current_user.email %>&nbsp;&nbsp;<br>
+        welcome <%= current_user.name %></h2>&nbsp;&nbsp;
+      </div>
+    </header>
+    
     <% if current_user.role_id == 1 %>
-      <%= link_to "showBrand",brands_show_path %>
-      <table>
-      <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Description</th>
-      <th></th>
-      </tr>
-
-      <% Product.all.each do |product| %>
-      <tr>
-      <td><%= image_tag product.images.first.thumb.url %></td>
-      <td><%= product.name %></td>
-      <td><%= product.price %></td>
-      <td><%= product.quantity %></td>
-      <td><%= product.size %></td>
-      <td><%= product.description %></td>
-      <td><%= link_to 'Update', products_edit_path(product)%></td>
-      <td><%= link_to 'Delete', products_delete_path(product),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
-
-      </tr>
-      <% end %>
-      </table>
+      <%= link_to "showBrand",brands_show_path %><br>
+      <td><%= link_to 'Add New Product', products_new_path%></td>&nbsp;&nbsp;
     <% end %>
-
-
-
-
-
-    <% if current_user.role_id == 2 %>
-      <table>
-      <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Size</th>
-      <th>Description</th>
-      <th></th>
-      </tr>
-
-      <% Product.all.each do |product| %>
-      <tr>
-      <td><%= image_tag product.images.first.thumb.url %></td>
-      <td><%= product.name %></td>
-      <td><%= product.price %></td>
-      <td><%= product.quantity %></td>
-      <td><%= product.size %></td>
-      <td><%= product.description %></td>
-
-      </tr>
-      <% end %>
-      </table>
-    <% end %>
-    <% else %>
-    <li>
+      <%= render "shared/show"%>
+  <% else %>
+    
+    
     <%= link_to "sign in",new_user_session_path %>
-    </li>
-    <li>
+    
     <%= link_to "sign up",new_user_registration_path %>
-    </li>
-
+    
   <% end %>
-</ul>
+
+<footer>
+  Shopping Cart
+</footer>
+</body>
+</html>
 

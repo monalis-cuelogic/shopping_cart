@@ -1,4 +1,4 @@
-<h1 style="color:#000080">Create Product</h1>
+<h1 style="color:#000080">Edit Product</h1>
 <%= form_for @product, url: {:controller => :products, action: :update}, html: { method: :put} do |form| %>
     <p>
     <%= form.label :Product_name %><br>
@@ -30,6 +30,6 @@
     <%= form.file_field :images, multiple: true %>
     </p>
 
-    <%= form.button "Create Product"%>
+    <%= form.button "Edit Product"%>
     </p>
 <% end %>
