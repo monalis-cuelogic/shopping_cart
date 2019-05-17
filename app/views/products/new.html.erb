@@ -1,3 +1,4 @@
+<%= render "shared/header"%>
 <h1 style="color:#000080">Create Product</h1>
 <%= form_for @product, url: products_new_path, html: { method: :post} do |form| %>
     <p>
@@ -36,3 +37,4 @@
     <%= form.button "Create Product"%>
     </p>
 <% end %>
+<%= render "shared/footer"%>

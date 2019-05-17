@@ -1,8 +1,9 @@
-class ProductsController < ApplicationController
+  class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user!
   def show
     @products = Product.all
+    @products = @products.page params[:page]
   end
 
   def new
@@ -10,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
+    
     @product = Product.new(product_params)
     @product.save
     redirect_to products_show_path

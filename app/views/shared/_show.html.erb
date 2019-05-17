@@ -1,6 +1,4 @@
-<% if current_user.role_id != 2%>
-    <%= link_to 'Create Product',products_new_path %>
-    <% end%>
+
 <table>
   <tr>
     <th>Image</th>
@@ -35,4 +33,4 @@
   <% end %>
 
 </table>
-
+<%= paginate @products %>

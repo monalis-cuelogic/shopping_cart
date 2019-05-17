@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
   	@products = Product.all
+  	@products = @products.page params[:page]
   end
 
   def welcome
