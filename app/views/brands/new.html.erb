@@ -1,32 +1,33 @@
 <%= render "shared/header"%>
-<%= link_to 'Back', :back%>
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+
+<%= link_to 'Back', brands_show_path %>
 <h1 style="color:#000080">Create Brand</h1>
 <%= form_for @brand, url: brands_new_path, html: { method: :post, :multipart => true } do |form| %>
-    <p>
-    <%= form.label :Brand_name %><br>
-    <%= form.text_field :name, placeholder: "Enter Name" %>
-    </p>
+  <% if @brand.errors.any? %>
+  <div id="error_explanation">
+      
+  </div>
+  <% end %>
 
-    <p>
-    <%= form.label :Description %><br>
-    <%= form.text_field :description, placeholder: "Enter description" %>
-    </p>
+  <p>
+  <%= form.label :Brand_name %><br>
+  <%= form.text_field :name, placeholder: "Enter Name" %><p style="color: red"><%= @brand.errors.messages[:name].presence.to_s%></p>
+  </p>
 
-    <p>
-    <%= form.label :Logo %><br>
-    <%= form.file_field :logo%><br>
-    </p>
+  <p>
+  <%= form.label :Description %><br>
+  <%= form.text_field :description, placeholder: "Enter description" %><p style="color: red"><%= @brand.errors.messages[:description].presence.to_s%></p>
+  </p>
 
-    <p>
-    <%= form.button "Add"%>
-    </p>
+  <p>
+  <%= form.label :Logo %><br>
+  <%= form.file_field :logo%><br><p style="color: red"><%= @brand.errors.messages[:logo].presence.to_s%></p>
+  </p>
+
+  <p>
+  <%= form.button "Add"%>
+  </p>
 <% end %>
-</body>
-</html>
+
+
 <%= render "shared/footer"%>

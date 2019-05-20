@@ -1,7 +1,16 @@
 <%= render "shared/header"%>
-<%= link_to 'Back', :back%>
+<%= link_to 'Back', root_path %>
 <h1 style="color:#000080">Edit Product</h1>
 <%= form_for @product, url: {:controller => :products, action: :update}, html: { method: :put} do |form| %>
+     <% if @product.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
     <p>
     <%= form.label :Product_name %><br>
     <%= form.text_field :name, placeholder: "Enter Product Name" %>

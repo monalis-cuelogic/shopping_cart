@@ -3,4 +3,6 @@ class Product < ApplicationRecord
   mount_uploaders :images, ImageUploader
   serialize :images, JSON
   paginates_per 5
+  validates :name, :price, :quantity, :description, :brand_id, :images, :presence => true
+  validates :name, uniqueness: true
 end

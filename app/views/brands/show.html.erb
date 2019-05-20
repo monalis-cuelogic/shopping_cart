@@ -1,5 +1,6 @@
 <%= render "shared/header"%>
-<%= link_to 'Back', :back%>
+
+<%= link_to 'Back', root_path %>
 <h1>Listing Brands</h1>
 <%= link_to "Create Brand", brands_new_path%>
 <table>
@@ -22,4 +23,5 @@
     </tr>
   <% end %>
 </table>
+
 <%= render "shared/footer"%>

@@ -11,8 +11,12 @@ class BrandsController < ApplicationController
 
   def create
     @brand=Brand.new(brand_params)
-    @brand.save
+    if @brand.save
     redirect_to brands_show_path
+    else
+      render 'new'
+    end
+
   end
 
   def edit
@@ -35,15 +39,15 @@ class BrandsController < ApplicationController
     redirect_to brands_show_path
     end
 
-    private
-      def set_user!
-        admin = Role.find_by_name("admin")
-        if current_user.present? && current_user.role_id != admin.id
-          redirect_to root_path
-        end
+  private
+    def set_user!
+      admin = Role.find_by_name("admin")
+      if current_user.present? && current_user.role_id != admin.id
+        redirect_to root_path
       end
+    end
 
-      def brand_params
-        params.require(:brand).permit(:id, :name, :description, :logo)
-      end
+    def brand_params
+      params.require(:brand).permit(:id, :name, :description, :logo)
+    end
 end

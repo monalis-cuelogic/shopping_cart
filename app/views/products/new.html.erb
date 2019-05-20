@@ -1,25 +1,31 @@
 <%= render "shared/header"%>
-<%= link_to 'Back', :back%>
+<%= link_to 'Back', root_path%>
 <h1 style="color:#000080">Create Product</h1>
 <%= form_for @product, url: products_new_path, html: { method: :post} do |form| %>
+    <% if @product.errors.any? %>
+    <div id="error_explanation">
+
+    </div>
+    <% end %>
+
     <p>
     <%= form.label :Product_name %><br>
-    <%= form.text_field :name, placeholder: "Enter Product Name" %>
+    <%= form.text_field :name, placeholder: "Enter Product Name" %><p style="color: red"><%= @product.errors.messages[:name].presence.to_s%></p>
     </p>
 
     <p>
     <%= form.label :Price %><br>
-    <%= form.text_field :price, placeholder: "Enter Price" %>
+    <%= form.text_field :price, placeholder: "Enter Price" %><p style="color: red"><%= @product.errors.messages[:price].presence.to_s%></p>
     </p>
 
     <p>
     <%= form.label :Quantity %><br>
-    <%= form.text_field :quantity, placeholder: "Enter Quantity" %>
+    <%= form.text_field :quantity, placeholder: "Enter Quantity" %><p style="color: red"><%= @product.errors.messages[:quantity].presence.to_s%></p>
     </p>
 
     <p>
     <%= form.label :Description %><br>
-    <%= form.text_field :description, placeholder: "Enter Product Description" %>
+    <%= form.text_field :description, placeholder: "Enter Product Description" %><p style="color: red"><%= @product.errors.messages[:description].presence.to_s%></p>
     </p>
 
     <p>
@@ -28,11 +34,11 @@
     </p>
 
     <p>
-    <%= form.select(:brand_id, Brand.all.map{|b| [b.name, b.id]},{prompt: 'Select Brand'}) %>
+    <%= form.select(:brand_id, Brand.all.map{|b| [b.name, b.id]},{prompt: 'Select Brand'}) %><p style="color: red"><%= @product.errors.messages[:brand_id].presence.to_s%></p>
     </p>
 
     <p>
-    <%= form.file_field :images, multiple: true %>
+    <%= form.file_field :images, multiple: true %><p style="color: red"><%= @product.errors.messages[:images].presence.to_s%></p>
     </p>
 
     <%= form.button "Create Product"%>

@@ -13,8 +13,11 @@
   def create
     
     @product = Product.new(product_params)
-    @product.save
+    if @product.save
     redirect_to products_show_path
+    else
+      render 'new'
+    end
   end
 
   def edit

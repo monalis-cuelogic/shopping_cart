@@ -1,17 +1,23 @@
 <%= render "shared/header"%>
-<%= link_to 'Back', :back%>
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+
+<%= link_to 'Back', brands_show_path %>
+
 <h1 style="color:#000080"><center>Update Edit</center></h1>
 <%= form_for @brand, url: {:controller => :brands, action: :update}, html: { method: :put } do |form| %>
+    <% if @brand.errors.any? %>
+    <div id="error_explanation">
+        <ul>
+        <% @brand.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
     <p>
     <%= form.label :Brand_name %><br>
     <%= form.text_field :name, placeholder: "Enter Name" %>
     </p>
+    
     <p>
     <%= form.label :Logo %><br>
     <%= form.file_field :logo%><br>
@@ -25,6 +31,5 @@
     <%= form.button "Update"%>
     </p>
 <% end %>
-</body>
-</html>
+
 <%= render "shared/footer"%>
