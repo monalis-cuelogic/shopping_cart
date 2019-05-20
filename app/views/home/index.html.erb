@@ -1,29 +1,26 @@
-
-  <% if user_signed_in? %>
-    
-    <header>
-      <div style="text-align: left">
-        <h2 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
-        <%= current_user.email %>&nbsp;&nbsp;<br>
-        welcome <%= current_user.name %></h2>&nbsp;&nbsp;
-      </div>
-    </header>
-    
-    <% if current_user.role_id == 1 %>
-      <%= link_to "showBrand",brands_show_path %><br>
-      <td><%= link_to 'Add New Product', products_new_path%></td>&nbsp;&nbsp;
-    <% end %>
-      <%= render "shared/show"%>
-  <% else %>
-    
-    
-    <%= link_to "sign in",new_user_session_path %>
-    
-    <%= link_to "sign up",new_user_registration_path %>
-    
+<% if user_signed_in? %>
+  <header>
+    <div style="text-align: left">
+      <h2 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
+      <%= current_user.email %>&nbsp;&nbsp;<br>
+      welcome <%= current_user.name %></h2>&nbsp;&nbsp;
+    </div>
+  </header>
+  
+  <% if current_user.role_id == 1 %>
+    <%= link_to "showBrand",brands_show_path %><br>
+    <td><%= link_to 'Add New Product', products_new_path%></td>&nbsp;&nbsp;
   <% end %>
+    <%= render "shared/show"%>
+<% else %>
+  
+  
+  <%= link_to "sign in",new_user_session_path %>
+  
+  <%= link_to "sign up",new_user_registration_path %>
+  
+<% end %>
 
 <footer>
-  Shopping Cart
+Shopping Cart
 </footer>
-

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def index
   	@products = Product.all
@@ -7,6 +7,8 @@ class HomeController < ApplicationController
   end
 
   def welcome
+  	@products = Product.all
+  	@products = @products.page params[:page]
   end
 
 end
