@@ -1,0 +1,28 @@
+<% if @products.present? %>
+<div class="row">
+
+	<% @products.each do |product| %>
+	<div class="col-sm-3" style="">
+      <%= image_tag product.images.first.thumb.url %><br>
+      <%= product.name %><br>
+      <%= product.price %><br>
+      <%= product.description %><br><br>
+      <%= @proBrand.name%>
+
+   </div>
+  	<% end%>
+
+</div>
+<% elsif @brands.present? %>
+<div class="row">
+	<% @brand.each do |brand| %>
+	<div class="col-sm-3" style="">
+      <%= image_tag brand.images.first.thumb.url %><br>
+      <%= brand.name %><br>
+      <%= brand.description %><br><br>
+
+   </div>
+  	<% end%>
+
+</div>
+<%end%>

@@ -11,4 +11,31 @@ class HomeController < ApplicationController
   	@products = @products.page params[:page]
   end
 
+  def search
+
+  	if params[:search].blank?  
+    	redirect_to(home_welcome_path, alert: "Empty field!") and return  
+    else  
+    	@parameter = params[:search].downcase  
+    	@products = Product.all.where("lower(name) LIKE :search", search: @parameter)
+      @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
+      
+    	redirect_to home_show_search_path(:search => params[:search].downcase)
+    end  
+
+    if @products.present?
+      @proBrand = @products.first.brand
+      
+    else
+      @brand = @brands.first.products
+    end
+  end
+  def show_search
+  	@parameter = params["search"]
+    @products = Product.all.where("lower(name) LIKE :search", search: @parameter)
+    @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
+   @brand = @brands.first.products
+  
+  end
+
 end
