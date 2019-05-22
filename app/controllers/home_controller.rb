@@ -19,7 +19,6 @@ class HomeController < ApplicationController
     	@parameter = params[:search].downcase  
     	@products = Product.all.where("lower(name) LIKE :search", search: @parameter)
       @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
-      
     	redirect_to home_show_search_path(:search => params[:search].downcase)
     end  
 
@@ -34,7 +33,13 @@ class HomeController < ApplicationController
   	@parameter = params["search"]
     @products = Product.all.where("lower(name) LIKE :search", search: @parameter)
     @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
-   @brand = @brands.first.products
+ 
+   if @products.present?
+      @proBrand = @products.first.brand
+      
+    else
+      @brand = @brands.first.products
+    end
   
   end
 
