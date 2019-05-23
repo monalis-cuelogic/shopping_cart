@@ -24,7 +24,6 @@
       <%= brand.name %><br>
       <%= brand.description %><br>
       <%= image_tag @brands.first.logo.small_thumb.url %><br>
-      <%binding.pry%>
       <%= link_to 'Add to cart', home_add_to_cart_path(id: brand.id), class: "btn btn-primary"%>
       <%= submit_tag "Buy"%>
       </div><br>

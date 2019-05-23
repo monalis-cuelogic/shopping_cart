@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable
   before_validation :set_default_role
   belongs_to :role
+  has_many :carts
   validates :name, presence: true
   protected
   def set_default_role

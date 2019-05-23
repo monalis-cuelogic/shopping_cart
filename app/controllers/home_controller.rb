@@ -42,12 +42,17 @@ class HomeController < ApplicationController
     else
       @brand = @brands.first.products
     end
-  
+
   end
   def add_to_cart
-    binding.pry
-   @parameter = params["id"]
-   @prod =Product.find(@parameter)
+    @parameter = params["id"]
+    @prod =Product.find(@parameter)
+    @cart = Cart.create(product_id: params["id"], user_id: current_user.id)
+
+    @cart.save
+    current_u_id = current_user.id
+    user = User.find(current_u_id)
+    @all_cart = user.carts
   end
 
 end
