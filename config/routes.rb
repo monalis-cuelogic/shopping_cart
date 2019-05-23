@@ -22,7 +22,10 @@ Rails.application.routes.draw do
 
   post 'home/welcome', to: 'home#search'
   get 'home/show_search'
-
+ 
+  
+  get 'home/add_to_cart'
+  #post  'home/show_search', to: 'home#add_to_cart'
   get '*path' => redirect('/')
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

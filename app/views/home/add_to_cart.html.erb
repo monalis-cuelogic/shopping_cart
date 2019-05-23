@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 10px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<div>
+
+<%= image_tag @prod.images.first.thumb.url %><br>
+<%= @prod.name %><br>
+
+</div>
+
+</body>
+</html>
+

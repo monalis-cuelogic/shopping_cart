@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
     <header>
       <div style="text-align: left">
-        <h2 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
+        <h4 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
         <%= current_user.email %>&nbsp;&nbsp;<br>
-        welcome <%= current_user.name %></h2>&nbsp;&nbsp;
+        welcome <%= current_user.name %></h4>&nbsp;&nbsp;
       </div>
     </header>
 

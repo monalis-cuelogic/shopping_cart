@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   end
 
   def welcome
+  
   	@products = Product.all
   	@products = @products.page params[:page]
   end
@@ -30,17 +31,23 @@ class HomeController < ApplicationController
     end
   end
   def show_search
+    
   	@parameter = params["search"]
     @products = Product.all.where("lower(name) LIKE :search", search: @parameter)
     @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
- 
-   if @products.present?
+   # @prod =Product.find(params[:id])
+    if @products.present?
       @proBrand = @products.first.brand
       
     else
       @brand = @brands.first.products
     end
   
+  end
+  def add_to_cart
+    binding.pry
+   @parameter = params["id"]
+   @prod =Product.find(@parameter)
   end
 
 end

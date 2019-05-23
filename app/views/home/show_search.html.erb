@@ -1,36 +1,33 @@
 <% if @products.present? %>
-  
-
- <div class="row">
+<div class="row">
   <% @products.each do |product| %>
-  
     <div class="col-sm-3" style="">
-    <div style="border-style: inset;text-align: center;border-color: #d7bde2">
-    <%= image_tag product.images.first.thumb.url %><br>
-    
-    <%= product.name %><br>
-    Price : <%= product.price %><br>
-    Descrption : <%= product.description %><br><br>
-    <%= @proBrand.name%><br>
-    <%= image_tag @proBrand.logo.thumb.url %><br><br>
-    </div><br>
-
-
-  </div>
+      <div style="border-style: inset;text-align: justify;border-color: #d7bde2;text-align-last: center">
+      <%= image_tag product.images.first.thumb.url %><br>
+      <div style="color:  #bfc9ca "><b><%= @proBrand.name%></b></div><br>
+      <%= product.name %><br>
+      Price : <%= product.price %><br>
+      Descrption : <%= product.description %><br>
+      <%= image_tag @proBrand.logo.small_thumb.url %><br>
+      <%= link_to 'Add to cart', home_add_to_cart_path(id: product.id), class: "btn btn-primary"%>
+      <%= submit_tag "Buy"%>
+      </div><br>
+    </div>
   <% end%>
-
-  </div>
-  <% elsif @brands.present? %>
-  
+</div>
+<% elsif @brands.present? %>
   <% @brand.each do |brand| %>
    <div class="col-sm-3" style="">
-   <div style="border-style: inset;text-align: center;border-color: #d7bde2">
-    <%= image_tag brand.images.first.thumb.url %><br>
-    <%= brand.name %><br>
-    <%= brand.description %><br><br>
-    <%= @brands.first.name%><br>
-    <%= image_tag @brands.first.logo.thumb.url %><br>
-    </div><br>
+     <div style="border-style: inset;text-align: justify;border-color: #d7bde2;text-align-last: center">
+      <%= image_tag brand.images.first.thumb.url %><br>
+      <div style="color: #85929e"><%= @brands.first.name%></div>
+      <%= brand.name %><br>
+      <%= brand.description %><br>
+      <%= image_tag @brands.first.logo.small_thumb.url %><br>
+      <%binding.pry%>
+      <%= link_to 'Add to cart', home_add_to_cart_path(id: brand.id), class: "btn btn-primary"%>
+      <%= submit_tag "Buy"%>
+      </div><br>
     </div>
   <% end%>
   </div>

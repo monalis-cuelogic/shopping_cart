@@ -4,9 +4,6 @@
 <title>CSS Template</title>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
 <style>
 * {
   box-sizing: border-box;
@@ -53,11 +50,14 @@ body {
 <body>
 
 <div class="topnav">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <%= form_tag url: {:controller => :home, action: :search}, html: { method: :post } do %>
-  <p>
+  <div>
+  <%= link_to 'Sign In',user_session_path%> </div>
+  <div>
+  <%= link_to 'Sign Up', new_user_registration_path%>
+  </div>
+
+  <%= form_tag url: {:controller => :home, action: :search}, html: { method: :post } do %><br>
+  <p style="text-align: right;">
     <%= text_field_tag :search %>
     <%= submit_tag "Search"%>
   </p>
@@ -73,9 +73,11 @@ body {
 	      <%= image_tag product.images.first.thumb.url %><br>
 	      <%= product.name %><br>
 	      <%= product.price %><br>
-	      <%= product.description %>
+	      <%= product.description %><br>
+        <%= link_to 'Add to cart', home_add_to_cart_path, class: "btn btn-primary"%>
+        <%= link_to 'Buy', home_add_to_cart_path, class: "btn btn-primary"%>        
       </div>
-      	<% end%>
+      <% end%>
    
   </div>
   </div>
