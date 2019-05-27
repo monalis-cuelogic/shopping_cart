@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<!-- <%# if user_signed_in? %>
   <header>
     <div style="text-align: left">
       <h2 style="text-align: left;"><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %><br>
@@ -8,7 +8,7 @@
   </header>
   
   <% if current_user.role_id == 1 %>
-    <%= link_to "showBrand",brands_show_path %><br>
+    <%= link_to "showBrand",brands_show_path %>&nbsp;&nbsp;
     <td><%= link_to 'Add New Product', products_new_path%></td>&nbsp;&nbsp;
   <% end %>
     <%= render "shared/show"%>
@@ -23,4 +23,4 @@
 
 <footer>
 Shopping Cart
-</footer>
+</footer> -->

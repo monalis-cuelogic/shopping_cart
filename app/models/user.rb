@@ -9,7 +9,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   protected
   def set_default_role
-    binding.pry
   	role=Role.find_by_name("customer")
     self.role_id = role.id
   end

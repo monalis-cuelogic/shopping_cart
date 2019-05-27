@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
 
-</style>
-</head>
-<body>
-<table>
-  <tr>
-    <th>name</th>
-    <th>description</th>
-    <th>Logo</th>
-    <th></th>
-  </tr>
- 
-  <% @all_cart.each do |cart| %>
-
-   	<% pp = cart.product_id %>
-   	<% all = Product.find(pp) %>
+<% @all_cart.each do |cart| %>
+  <% pp = cart.product_id %>
+  <% all = Product.find(pp) %>
    	
-    <tr>
-      <td><%= all.name %></td>
-      <td><%= all.price %></td>
-      <td><%#= image_tag cart.logo.thumb.url.to_s %></td>
-    </tr>
-  <% end %>
-</table>
-
-</body>
-</html>
-
+  <%= all.name %><br>
+  <%= all.price %><br>
+  <%= image_tag all.images.first.thumb.url.to_s %>
+<% end %>
