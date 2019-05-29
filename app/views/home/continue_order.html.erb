@@ -1,0 +1,50 @@
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  background-color: #557b97;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 90%;
+  margin: 10px;
+  /*text-align: center;*/
+  line-height: 25px;
+  /*font-size: 30px;*/
+}
+</style>
+<div class="flex-container">
+
+  <div>1
+
+  <b style="color: #909497 ">Login</b><br>
+  <b>Name</b> <%=  current_user.name%><br>
+  <b>Email</b> <%= current_user.email %>
+
+  </div>
+
+
+  <div>2   <b style="color: #909497 ">DELIVERY ADDRESS </b><br><%= current_user.address%></div>
+
+  <div>3   <b style="color: #909497">Order Summary</b><br>
+  <%= image_tag @cart_product.images.first.thumb.url.to_s %><br>
+  <%= @cart_product.name%><br>
+  ₹ <%= @cart_product.price%><br>
+  <%= @cart_product.description%><br>
+  Size <%= @cart_product.size%><br>
+
+  Total Amount ₹ <%= @cart_product.price.to_i * @quantity_params.to_i  %><br><br>
+  <%= link_to 'Confirm Order',home_send_mail_path, class: "btn btn-primary"%>
+  </div>
+  <div>
+    4  <b style="color: #909497">PAYMENT OPTION</b><br>
+    CASH ON DELIVERY
+  </div> 
+
+
+</div>
+
+
+
+

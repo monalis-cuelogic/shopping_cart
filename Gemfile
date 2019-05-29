@@ -67,3 +67,6 @@ gem 'pry', '~> 0.12.2'
 gem 'awesome_print'
 gem 'kaminari'
 gem "bootstrap-sass"
+gem 'gmail'
+gem 'mail'
+gem 'prawn'

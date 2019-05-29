@@ -1,0 +1,46 @@
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  background-color: #778899;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 90%;
+  margin: 10px;
+  /*text-align: center;*/
+  line-height: 25px;
+  /*font-size: 30px;*/
+}
+</style>
+<div class="flex-container">
+
+  <div>1
+
+  <b style="color: #909497 ">Login</b><br>
+  <b>Name</b> <%=  current_user.name%><br>
+  <b>Email</b> <%= current_user.email %>
+
+  </div>
+
+
+  <div>2   <b style="color: #909497 ">DELIVERY ADDRESS </b><br><%= current_user.address%></div>
+
+  <div>3   <b style="color: #909497">Order Summary</b><br>
+  <%= image_tag @cart_prod.images.first.thumb.url.to_s %><br>
+  <%= @cart_prod.name%><br>
+  ₹ <%= @cart_prod.price%><br>
+  <%= @cart_prod.description%><br>
+  Size <%= @cart_prod.size%><br>
+
+  <%= form_tag home_continue_order_path(id: @cart_prod.id) do %>
+  <%= text_field_tag :quantity %><br>
+  <%= link_to 'Remove', cart_remove_path(id: @cart_prod.id), method: :delete, class: "btn btn-primary"%>
+  <%= submit_tag "continue", class: "btn btn-primary" %>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <% end %>
+  </div>
+
+
+</div>

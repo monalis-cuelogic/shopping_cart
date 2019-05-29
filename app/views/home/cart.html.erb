@@ -1,4 +1,5 @@
 <%= link_to 'Back', root_path %>
+
 <div class="row">
 	<% @cart.each do |cart| %>
 		<div class="col-sm-4" style="">
@@ -10,10 +11,17 @@
 					<%= image_tag all.images.first.thumb.url.to_s %><br>
 					<%= all.name %><br>
 					<%= all.price %><br>
+					
+					
+
 					<%= link_to 'Remove', cart_remove_path(id: pp), method: :delete, class: "btn btn-primary"%>
-					<%= link_to 'Buy', class: "btn btn-primary"%>
+					<%= link_to 'Buy', home_buy_product_path(id: pp), class: "btn btn-primary"%>
 				<% end %>
 			</div>
 		</div>
 	<% end %>
 </div>
+
+<% if @cart.count == 0%>
+<%  flash[:notice] = "Your Shopping Cart is empty..." %>
+<% end %>

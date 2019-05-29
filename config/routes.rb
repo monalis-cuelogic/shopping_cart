@@ -8,8 +8,7 @@ Rails.application.routes.draw do
  
 
   get 'brands/show'
-  post 'brands/show', to: 'home#search'
-
+  
   get 'brands/:id/edit', to: 'brands#edit', as: 'brands_edit'
   put 'brands/:id', to: 'brands#update'
 
@@ -33,6 +32,15 @@ Rails.application.routes.draw do
   get 'home/cart'
   post 'home/cart', to: 'home#search'
   delete 'home/:id', to: 'home#remove_cart', as: 'cart_remove'
+  get 'home/buy_product'
+  get 'home/:id/buy_product', to: 'home#buy_product'
+  get 'home/continue_order'
+  post 'home/continue_order'
+  post 'home/buy_product', to: 'home#continue_order'
+
+  get "home/send_mail", to: 'home#send_mail'
+
+
   get '*path' => redirect('/')
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,7 @@
+<% data = current_user.email %>
+<% if @gmail.deliver do%>
+<% to "#{data}"%>
+<% subject "Your Order Is Confirmed"  %>
+<% end%>
+<% flash[:notice] = "Your Order Is Confirmed"%>
+<% end %>
