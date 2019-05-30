@@ -82,13 +82,34 @@ class HomeController < ApplicationController
   end
 
   def send_mail
-    binding.pry
-    @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
-    data = current_user.email
-    @gmail.deliver do
-    to "#{data}"
-    subject "Your Order Is Confirmed"   
+    @cart_product = Product.find_by_id(params["id"])
+    @cart = Product.find(params[:id])
+    @quantity_params = params[:quantity]
+    @total = params[:total].to_i
+
+
+
+    # @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
+    # data = current_user.email
+    # @gmail.deliver do
+    # to "#{data}"
+    # subject "Your Order Is Confirmed"  
+    # end
+
+    respond_to do |format|
+    format.html
+    format.pdf do
+    pdf = CartPdf.new(@cart, @view)
+   
+
+    send_data pdf.render, 
+          filename: "cart_#{@cart}",
+          type: 'application/pdf',
+          disposition: 'inline'
+        
     end
+    end
+
   end
 
 end

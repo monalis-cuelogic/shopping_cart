@@ -39,6 +39,9 @@ Rails.application.routes.draw do
   post 'home/buy_product', to: 'home#continue_order'
 
   get "home/send_mail", to: 'home#send_mail'
+  get "home/:id/send_mail", to: 'home#send_mail'
+  get "home/:total/send_mail", to: 'home#send_mail'
+
 
 
   get '*path' => redirect('/')
