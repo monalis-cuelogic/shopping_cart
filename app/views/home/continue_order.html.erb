@@ -35,7 +35,7 @@
   Size <%= @cart_product.size%><br>
   <% @total = @cart_product.price.to_i * @quantity_params.to_i  %><br><br>
   Total Amount ₹ <%= @cart_product.price.to_i * @quantity_params.to_i  %><br><br>
-  <%= link_to 'Confirm Order',home_send_mail_path(id: @cart_product.id, total: @total,  quantity: @quantity_params), class: "btn btn-primary"%>
+  <%= link_to 'Confirm Order',home_send_mail_path(id: @cart_product.id, total: @total, quantity: @quantity_params), class: "btn btn-primary"%>
   </div>
   <div>
     4  <b style="color: #909497">PAYMENT OPTION</b><br>

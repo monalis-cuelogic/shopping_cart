@@ -10,5 +10,5 @@
 
 <p>
 <% @current_user = current_user.name %>
-<%= link_to "Printable Receipt (PDF)", home_send_mail_path(@cart, format: 'pdf', id: @cart_product.id, total: @total,user: @current_user)%>
+<%= link_to "Printable Receipt (PDF)", home_send_mail_path(@cart, format: 'pdf', id: @cart_product.id, total: @total, quantity: @quantity_params )%>
 </p>

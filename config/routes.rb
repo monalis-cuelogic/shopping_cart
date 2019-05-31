@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get "home/send_mail", to: 'home#send_mail'
   get "home/:id/send_mail", to: 'home#send_mail'
   get "home/:total/send_mail", to: 'home#send_mail'
+  get "home/:quantity/send_mail", to: 'home#send_mail'
 
 
 

@@ -82,6 +82,7 @@ class HomeController < ApplicationController
   end
 
   def send_mail
+
     @cart_product = Product.find_by_id(params["id"])
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]
@@ -99,7 +100,8 @@ class HomeController < ApplicationController
     respond_to do |format|
     format.html
     format.pdf do
-    pdf = CartPdf.new(@cart, @view)
+    pdf = CartPdf.new(@cart, @view, @total,@quantity_params)
+    pdf.fill_color "f0ffc1"
    
 
     send_data pdf.render, 
