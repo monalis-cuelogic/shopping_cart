@@ -2,7 +2,7 @@
 
 <div class="row">
 	<% @cart.each do |cart| %>
-		<div class="col-sm-4" style="">
+		<div class="col-sm-4">
 			<div style="border-style: inset;text-align: justify;border-color: #d7bde2;text-align-last: center">
 				<%  if current_user.id == cart.user_id %>
 					<% pp = cart.product_id %>

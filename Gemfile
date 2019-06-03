@@ -70,5 +70,4 @@ gem "bootstrap-sass"
 gem 'gmail'
 gem 'mail'
 gem 'prawn'
-gem 'responders'
 gem 'prawn-table'

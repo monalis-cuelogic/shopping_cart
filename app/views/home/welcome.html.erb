@@ -35,7 +35,7 @@ body {
       <%= product.price %><br>
       <%= product.description %><br>
       <%= link_to 'Add to cart', add_to_cart_path(id:product.id), class: "btn btn-primary"%>
-      <%#= link_to 'Buy', add_to_cart_path, class: "btn btn-primary"%>
+      <%= link_to 'Buy', home_buy_product_path(id:product.id), class: "btn btn-primary"%>
       </div>  
     </div>
     <% end%>

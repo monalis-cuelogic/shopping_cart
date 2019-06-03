@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     	@parameter = params[:search].downcase  
     	@products = Product.all.where("lower(name) LIKE :search", search: @parameter)
       @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
-    	#redirect_to home_show_search_path(:search => params[:search].downcase)
+    	redirect_to home_show_search_path(:search => params[:search].downcase)
     end  
 
     if @products.present?
@@ -29,6 +29,7 @@ class HomeController < ApplicationController
       @brand = @brands.first.products
     end
   end
+
   def show_search
   	@parameter = params["search"]
     @products = Product.all.where("lower(name) LIKE :search", search: @parameter)
@@ -36,7 +37,6 @@ class HomeController < ApplicationController
    # @prod =Product.find(params[:id])
     if @products.present?
       @proBrand = @products.first.brand
-      
     else
       @brand = @brands.first.products
     end
@@ -77,8 +77,21 @@ class HomeController < ApplicationController
   end
 
   def continue_order
+    binding.pry
     @cart_product = Product.find_by_id(params["id"])
-    @quantity_params = params[:quantity]
+    @quantity_params = params[:quantity].to_i
+
+    @diff_quantity = @cart_product.quantity - @quantity_params 
+    @cart_product.quantity = @diff_quantity
+    @cart_product.save
+    if @cart_product.quantity <= 0
+      flash[:notice] = "Product not available"
+      redirect_to home_cart_path and return
+    #elsif condition
+      
+    end
+
+
   end
 
   def send_mail

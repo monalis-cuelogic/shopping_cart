@@ -32,6 +32,7 @@ body {
         <b><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %></b>
         
         <b><%= link_to 'Cart', home_cart_path%></b> 
+        <b><%= link_to 'Profile', edit_user_registration_path %></b> 
         <% if current_user.role_id == 1 %>
         <b><%= link_to "showBrand",brands_show_path %></b>&nbsp;&nbsp;
         <b><%= link_to 'Add New Product', products_new_path%></b>
