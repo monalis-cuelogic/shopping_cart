@@ -1,5 +1,5 @@
-
 <%= link_to 'Back', root_path%>
+<div style="margin-left: 100px">
 <h1 style="color:#000080">Create Product</h1>
 <%= form_for @product, url: products_new_path, html: { method: :post} do |form| %>
     <% if @product.errors.any? %>
@@ -44,3 +44,4 @@
     <%= form.button "Create Product"%>
     </p>
 <% end %>
+</div>

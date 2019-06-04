@@ -1,5 +1,5 @@
-
 <%= link_to 'Back', root_path %>
+<div style="margin-left: 100px">
 <h1 style="color:#000080">Edit Product</h1>
 <%= form_for @product, url: {:controller => :products, action: :update}, html: { method: :put} do |form| %>
      <% if @product.errors.any? %>
@@ -44,4 +44,5 @@
     <%= form.button "Edit Product"%>
     </p>
 <% end %>
+</div>
 <%= render "shared/footer"%>
