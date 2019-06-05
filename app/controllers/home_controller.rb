@@ -77,20 +77,19 @@ class HomeController < ApplicationController
   end
 
   def continue_order
+    binding.pry
     @cart_product = Product.find_by_id(params["id"])
     @quantity_params = params[:quantity].to_i
 
-    @diff_quantity = @cart_product.quantity - @quantity_params 
-    #@cart_product.quantity = @diff_quantity
-    @cart_product.save
-    if @cart_product.quantity < 0
+    binding.pry
+    if params[:quantity].to_i <= @cart_product.quantity
+      @diff_quantity = @cart_product.quantity - @quantity_params 
+      @cart_product.quantity = @diff_quantity
+      @cart_product.save      
+    else
       flash[:alert] = "Please order only what's available #{@cart_product.quantity}"
-      redirect_to home_cart_path and return
-    #elsif condition
-      
+      redirect_to buy_product_path(params[:id])
     end
-
-
   end
 
   def send_mail

@@ -1,10 +1,10 @@
 
 <%= link_to 'Back', brands_show_path %>
+<div style="margin-left: 100px">
 <h1 style="color:#000080">Create Brand</h1>
 <%= form_for @brand, url: brands_new_path, html: { method: :post, :multipart => true } do |form| %>
   <% if @brand.errors.any? %>
   <div id="error_explanation">
-      
   </div>
   <% end %>
 
@@ -20,13 +20,14 @@
 
   <p>
   <%= form.label :Logo %><br>
-  <%= form.file_field :logo%><br><p style="color: red"><%= @brand.errors.messages[:logo].presence.to_s%></p>
+  <%= form.file_field :logo%><p style="color: red"><%= @brand.errors.messages[:logo].presence.to_s%></p>
   </p>
 
   <p>
   <%= form.button "Add"%>
   </p>
 <% end %>
+</div>
 
 
-<%= render "shared/footer"%>
+<%#= render "shared/footer"%>

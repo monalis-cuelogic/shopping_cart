@@ -12,7 +12,7 @@
       Descrption : <%= product.description %><br>
       <%= image_tag @proBrand.logo.small_thumb.url %><br>
       <%= link_to 'Add to cart', add_to_cart_path(id: product.id), class: "btn btn-primary"%>
-      <%= link_to 'Buy', home_buy_product_path(id: @products.ids), class: "btn btn-primary"%>
+      <%= link_to 'Buy', buy_product_path(id: @products.ids), class: "btn btn-primary"%>
       </div><br>
     </div>
   <% end%>
@@ -28,7 +28,7 @@
       <%= brand.description %><br>
       <%= image_tag @brands.first.logo.small_thumb.url %><br>
       <%= link_to 'Add to cart', add_to_cart_path(id: brand.id), class: "btn btn-primary"%>
-      <%= link_to 'Buy', home_buy_product_path(id:brand.id), class: "btn btn-primary"%>
+      <%= link_to 'Buy', buy_product_path(id:brand.id), class: "btn btn-primary"%>
       </div><br>
     </div>
   <% end%>

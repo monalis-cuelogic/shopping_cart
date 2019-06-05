@@ -1,8 +1,8 @@
 
 
 <%= link_to 'Back', brands_show_path %>
-
-<h1 style="color:#000080"><center>Update Edit</center></h1>
+<div style="margin-left: 100px">
+<h1 style="color:#000080">Update Edit</h1>
 <%= form_for @brand, url: {:controller => :brands, action: :update}, html: { method: :put } do |form| %>
     <% if @brand.errors.any? %>
     <div id="error_explanation">
@@ -20,7 +20,7 @@
     
     <p>
     <%= form.label :Logo %><br>
-    <%= form.file_field :logo%><br>
+    <%= form.file_field :logo%>
     </p>
 
     <p>
@@ -31,5 +31,6 @@
     <%= form.button "Update"%>
     </p>
 <% end %>
+</div>
 
-<%= render "shared/footer"%>
+<%#= render "shared/footer"%>
