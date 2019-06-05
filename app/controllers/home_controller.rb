@@ -77,11 +77,9 @@ class HomeController < ApplicationController
   end
 
   def continue_order
-    binding.pry
     @cart_product = Product.find_by_id(params["id"])
     @quantity_params = params[:quantity].to_i
 
-    binding.pry
     if params[:quantity].to_i <= @cart_product.quantity
       @diff_quantity = @cart_product.quantity - @quantity_params 
       @cart_product.quantity = @diff_quantity
@@ -98,8 +96,6 @@ class HomeController < ApplicationController
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]
     @total = params[:total].to_i
-
-
 
     # @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
     # data = current_user.email

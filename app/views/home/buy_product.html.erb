@@ -34,7 +34,6 @@
   ₹ <%= @cart_prod.price%><br>
   <%= @cart_prod.description%><br>
   Size <%= @cart_prod.size%><br>
-<%# binding.pry%>
   <%= form_tag home_continue_order_path(id: @cart_prod.id) do %>
 
   <%= label_tag :Quantity %>
