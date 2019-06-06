@@ -8,50 +8,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+
 </style>
 
 <div class="topnav">
-<% if user_signed_in? %>
-  <%= form_tag("/home/show_search", method: "post") do%>
+<%= form_tag("/home/show_search", method: "post") do%>
   <br>
-        <div style="text-align: center;">
-        <%= text_field_tag :search, nil, placeholder: 'Search for brands, products and more', size: 75 %>
-        <%= submit_tag "search"%>   
-        <b><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %></b>
-        
-        <b><%= link_to 'Cart', home_cart_path%></b> 
-        <b><%= link_to 'Profile', edit_user_registration_path %></b> 
+  <div style="text-align: center;">
+    <%= text_field_tag :search, nil, placeholder: 'Search for brands, products and more', size: 75 %>
+    <%= submit_tag "search"%> 
+    <% if user_signed_in? %>
+      <b><%= link_to "sign out", destroy_user_session_path , method: :delete, :style=>'color:white;' %></b>
+      <b><%= link_to 'Cart', home_cart_path%></b> 
+      <b><%= link_to 'Profile', edit_user_registration_path %></b> 
         <% if current_user.role_id == 1 %>
         <b><%= link_to "showBrand",brands_show_path %></b>&nbsp;&nbsp;
         <b><%= link_to 'Add New Product', products_new_path%></b>
         <% end %>
-
-        </div>
-        <!-- <h1>welcome <%= current_user.name %>&nbsp;&nbsp;</h1> -->
-  <% end %>
-  
-
-<% else%>
-<%= form_tag url: {:controller => :home, action: :search}, html: { method: :post } do %><br>
-        <div style="text-align: center;">
-        <%= text_field_tag :search, nil, placeholder: 'Search for brands, products and more', size: 75 %>
-        <%= submit_tag "search"%>   
+      <% else%>
         <b><%= link_to 'Login & SignUp', new_user_session_path %></b>
         <b><%= link_to 'Cart', home_cart_path%></b> </div>
-
+    <% end %>
+  </div>
   <% end %>
-  
-<% end %>
 </div>

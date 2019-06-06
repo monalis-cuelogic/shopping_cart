@@ -1,7 +1,7 @@
 require 'gmail'
 
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:cart, :add_to_cart]
+  before_action :authenticate_user!, only: [:cart, :add_to_cart, :buy_product]
 
   def index
   	@products = Product.all
@@ -34,11 +34,12 @@ class HomeController < ApplicationController
   	@parameter = params["search"]
     @products = Product.all.where("lower(name) LIKE :search", search: @parameter)
     @brands = Brand.all.where("lower(name) LIKE :search", search: @parameter) 
-   # @prod =Product.find(params[:id])
     if @products.present?
       @proBrand = @products.first.brand
-    else
+    elsif @brands.present?
       @brand = @brands.first.products
+    else
+      redirect_to root_path
     end
   end
 
@@ -91,18 +92,17 @@ class HomeController < ApplicationController
   end
 
   def send_mail
-
     @cart_product = Product.find_by_id(params["id"])
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]
     @total = params[:total].to_i
 
-    # @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
-    # data = current_user.email
-    # @gmail.deliver do
-    # to "#{data}"
-    # subject "Your Order Is Confirmed"  
-    # end
+    @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
+    data = current_user.email
+    @gmail.deliver do
+    to "#{data}"
+    subject "Your Order Is Confirmed"  
+    end
 
     respond_to do |format|
     format.html
@@ -115,10 +115,7 @@ class HomeController < ApplicationController
           filename: "cart_#{@cart}",
           type: 'application/pdf',
           disposition: 'inline'
-        
     end
     end
-
   end
-
 end

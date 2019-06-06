@@ -1,11 +1,11 @@
 <% @total = @cart_product.price.to_i * @quantity_params.to_i  %>
 <% data = current_user.email %>
-<%# if @gmail.deliver do%>
-<%# to "#{data}"%>
-<%# subject "Your Order Is Confirmed"  %>
-<%# end%>
-<%# flash[:notice] = "Your Order Is Confirmed"%>
-<%# end %>
+<% if @gmail.deliver do%>
+<% to "#{}{data}"%>
+<% subject "Your Order Is Confirmed"  %>
+<% end%>
+<% flash[:notice] = "Your Order Is Confirmed"%>
+<% end %>
 
 
 <p>
