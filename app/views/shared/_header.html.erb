@@ -15,6 +15,7 @@ body {
 <%= form_tag("/home/show_search", method: "post") do%>
   <br>
   <div style="text-align: center;">
+    <b style="color: #ca6f1e"><%= link_to 'Home', root_path %></b>
     <%= text_field_tag :search, nil, placeholder: 'Search for brands, products and more', size: 75 %>
     <%= submit_tag "search"%> 
     <% if user_signed_in? %>

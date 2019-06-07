@@ -1,25 +1,24 @@
-<%= link_to 'Back', root_path %>
+
 
 <div class="row">
-	<% @cart.each do |cart| %>
-		<div class="col-sm-4">
-			<div style="border-style: inset;text-align: justify;border-color: #d7bde2;text-align-last: center">
-				<%  if current_user.id == cart.user_id %>
-					<% pp = cart.product_id %>
-					<% all = Product.find(pp) %>
-					<%  if all.quantity > 0%>
-					<%= image_tag all.images.first.thumb.url.to_s %><br>
-					<%= all.name %><br>
-					<%= all.price %><br>
-					<%= link_to 'Remove', cart_remove_path(id: pp), method: :delete, class: "btn btn-primary"%>
-					<%= link_to 'Buy', buy_product_path(id: pp), class: "btn btn-primary"%>
-					<% end %>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
+  <% @all_cart.each do |cart| %>
+    <%  if current_user.id == cart.user_id %>
+      <% pp = cart.product_id %>
+      <% all = Product.find(pp) %>
+        <% if all.quantity > 0%>
+          <div class="col-sm-4">
+          <div style="border-style: inset;text-align: justify;border-color: #d7bde2;text-align-last: center">
+            <%= image_tag all.images.first.thumb.url.to_s %><br>
+            <%= all.name %><br>
+            <%= all.price %><br>
+            <%= link_to 'Remove', cart_remove_path(id: pp), method: :delete, class: "btn btn-primary"%>
+            <%= link_to 'Buy', buy_product_path(id: pp), class: "btn btn-primary"%>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
 </div>
-
-<% if @cart.count == 0%>
-<%  flash[:notice] = "Your Shopping Cart is empty..." %>
+<% if @all_cart.count == 0%>
+  <%  flash[:notice] = "Your Shopping Cart is empty..." %>
 <% end %>

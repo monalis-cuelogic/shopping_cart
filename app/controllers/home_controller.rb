@@ -39,6 +39,7 @@ class HomeController < ApplicationController
     elsif @brands.present?
       @brand = @brands.first.products
     else
+      flash[:notice] = "Search not availabe....!"
       redirect_to root_path
     end
   end
@@ -60,6 +61,9 @@ class HomeController < ApplicationController
   end
 
   def cart
+    current_u_id = current_user.id
+    user = User.find(current_u_id)
+    @all_cart = user.carts
     @cart = Cart.all
   end
 
@@ -78,6 +82,7 @@ class HomeController < ApplicationController
   end
 
   def continue_order
+    binding.pry
     @cart_product = Product.find_by_id(params["id"])
     @quantity_params = params[:quantity].to_i
 
@@ -103,6 +108,13 @@ class HomeController < ApplicationController
     to "#{data}"
     subject "Your Order Is Confirmed"  
     end
+  end
+
+  def pdf_show
+    @cart_product = Product.find_by_id(params["id"])
+    @cart = Product.find(params[:id])
+    @quantity_params = params[:quantity]
+    @total = params[:total].to_i
 
     respond_to do |format|
     format.html

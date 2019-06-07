@@ -7,31 +7,12 @@ class CartPdf < Prawn::Document
     @quantity_params = quantity_params
 
     text "#{Date.today}",style: :italic
-
-    # text "Price #{@cart.price}", size: 30, style: :bold
-    # text "Size #{@cart.size}", size: 30, style: :bold
-    # text "Total #{@total}", size: 30, style: :bold
     @view = view
     line_items
   end
 
 
   def line_items
-    # move_down 20
-    # t = make_table([["this is the first row"],["this is the second row"]])
-    # t.draw
-    # move_down 20
-
-    # table([["short","short","loooooooooooooooooooong"],["short","loooooooooooooooooooong","short"],["loooooooooooooooooooong","short","short"]])
- 
-     # data =[["welcome"]]
-     # data +=[["..."]]* 5
-     # table(data,:header => true, :borders =>[:top,:left])
-
-     # table([["short","short","loooooooooooooooooooong"],
-     #  ["short","loooooooooooooooooooong","short"],
-     #  ["loooooooooooooooooooong","short","short"]])
-     
      data =[
             ["Order Details"],
             ["Product Name - #{@cart.name}"],
@@ -40,8 +21,6 @@ class CartPdf < Prawn::Document
             ["Total - #{@total}"],
             ["Thank You For Shopping With Us!!!"]
            ]
-   
-    
    table(data) do
      cells.padding = 12  
      cells.borders =[]  
@@ -60,13 +39,7 @@ class CartPdf < Prawn::Document
      row(1).text_align = [:center]
      row(0).position = [:center]
      row(5).text_color = "FF004D"
-
-    
    end
-    
-    
-
   end
-
 end
 

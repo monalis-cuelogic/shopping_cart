@@ -19,7 +19,7 @@
   <%= @cart_product.description%><br>
   Size <%= @cart_product.size%><br>
   <% @total = @cart_product.price.to_i * @quantity_params.to_i  %>
-  
+  Quantity - <%= @quantity_params%><br>
   Total Amount ₹ <%= @cart_product.price.to_i * @quantity_params.to_i  %><br><br>
   <%= link_to 'Confirm Order',home_send_mail_path(id: @cart_product.id, total: @total, quantity: @quantity_params), class: "btn btn-primary"%>
   </div>
