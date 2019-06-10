@@ -71,3 +71,4 @@ gem 'gmail'
 gem 'mail'
 gem 'prawn'
 gem 'prawn-table'
+gem 'rails_12factor', group: :production

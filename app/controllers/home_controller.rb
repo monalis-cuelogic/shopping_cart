@@ -52,7 +52,7 @@ class HomeController < ApplicationController
       flash[:notice] = "Product successfully added to cart....!"
       redirect_to(home_welcome_path) and return
     else
-      flash[:alert] = "Product allready in cart!"
+      flash[:alert] = "Product already in cart!"
       redirect_to(home_welcome_path) and return
     end
     current_u_id = current_user.id
@@ -89,7 +89,6 @@ class HomeController < ApplicationController
   end
 
   def send_mail
-    binding.pry
     @cart_product = Product.find_by_id(params["id"])
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]

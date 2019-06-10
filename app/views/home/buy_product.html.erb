@@ -21,8 +21,8 @@
   <%= form_tag continue_order_path(@cart_prod.id) do %>
 
   <%= label_tag :Quantity %>
-  <%= number_field_tag :quantity, nil, required: true, min: 1 %><br><br>
-  <%= link_to 'Remove', cart_remove_path(id: @cart_prod.id), method: :delete, class: "btn btn-primary"%>
+  <%= number_field_tag :quantity, nil, required: true, min: 1, max:5 %><br><br>
+  <%= link_to 'Cancel', root_path, class: "btn btn-primary"%>
   <%= submit_tag "continue", class: "btn btn-primary" %>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <% end %>
