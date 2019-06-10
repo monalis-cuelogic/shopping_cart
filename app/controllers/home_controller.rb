@@ -82,25 +82,27 @@ class HomeController < ApplicationController
   end
 
   def continue_order
-    binding.pry
     @cart_product = Product.find_by_id(params["id"])
     @quantity_params = params[:quantity].to_i
 
+    
+  end
+
+  def send_mail
+    binding.pry
+    @cart_product = Product.find_by_id(params["id"])
+    @cart = Product.find(params[:id])
+    @quantity_params = params[:quantity]
+    @total = params[:total].to_i
+
     if params[:quantity].to_i <= @cart_product.quantity
-      @diff_quantity = @cart_product.quantity - @quantity_params 
+      @diff_quantity = @cart_product.quantity - @quantity_params.to_i 
       @cart_product.quantity = @diff_quantity
       @cart_product.save      
     else
       flash[:alert] = "Please order only what's available #{@cart_product.quantity}"
       redirect_to buy_product_path(params[:id])
     end
-  end
-
-  def send_mail
-    @cart_product = Product.find_by_id(params["id"])
-    @cart = Product.find(params[:id])
-    @quantity_params = params[:quantity]
-    @total = params[:total].to_i
 
     @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
     data = current_user.email
@@ -114,12 +116,13 @@ class HomeController < ApplicationController
     @cart_product = Product.find_by_id(params["id"])
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]
+    @current_user=current_user.name
     @total = params[:total].to_i
 
     respond_to do |format|
     format.html
     format.pdf do
-    pdf = CartPdf.new(@cart, @view, @total,@quantity_params)
+    pdf = CartPdf.new(@cart, @view, @total,@quantity_params,@current_user)
     pdf.fill_color "f0ffc1"
    
 

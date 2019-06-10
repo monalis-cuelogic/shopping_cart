@@ -1,10 +1,11 @@
 class CartPdf < Prawn::Document
-  def initialize(cart,view,total,quantity_params)
+  def initialize(cart,view,total,quantity_params,current_user)
     super(margin: 70)
 
     @cart = cart
     @total = total
     @quantity_params = quantity_params
+    @current_user = current_user
 
     text "#{Date.today}",style: :italic
     @view = view
@@ -14,6 +15,7 @@ class CartPdf < Prawn::Document
 
   def line_items
      data =[
+            ["#{@current_user}"],
             ["Order Details"],
             ["Product Name - #{@cart.name}"],
             ["Price - #{@cart.price}"],
@@ -26,7 +28,7 @@ class CartPdf < Prawn::Document
      cells.borders =[]  
      row(0).borders      =[:bottom]
      row(0).font_style   = :bold  
-     row(3).borders      =[:bottom]  
+     row(4).borders      =[:bottom]  
      row(0).border_width = 1  
      
      row(5).font_style   =:italic  
@@ -38,7 +40,7 @@ class CartPdf < Prawn::Document
      row(0).border_lines = [:dotted]
      row(1).text_align = [:center]
      row(0).position = [:center]
-     row(5).text_color = "FF004D"
+     row(6).text_color = "FF004D"
    end
   end
 end
