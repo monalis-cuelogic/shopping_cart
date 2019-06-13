@@ -6,7 +6,8 @@ ruby '2.6.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
@@ -71,4 +72,5 @@ gem 'gmail'
 gem 'mail'
 gem 'prawn'
 gem 'prawn-table'
-gem 'rails_12factor', group: :production
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby

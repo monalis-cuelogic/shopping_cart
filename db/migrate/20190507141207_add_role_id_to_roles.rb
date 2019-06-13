@@ -1,5 +1,8 @@
 class AddRoleIdToRoles < ActiveRecord::Migration[5.2]
   def change
-    add_column :roles, :role_id, :integer
+  	create_table :roles do |t|
+      t.string :name
+      t.timestamps
+    end
   end
 end

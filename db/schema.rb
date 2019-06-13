@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_05_23_105530) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -39,12 +42,6 @@ ActiveRecord::Schema.define(version: 2019_05_23_105530) do
     t.integer "brand_id"
     t.string "images"
     t.index ["brand_id"], name: "index_products_on_brand_id"
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
