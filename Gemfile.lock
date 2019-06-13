@@ -289,7 +289,6 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.1.0)
   bootstrap-sass
-  bundler (~> 2.0.2)
   byebug
   capybara (>= 2.15)
   carrierwave (~> 1.0)
