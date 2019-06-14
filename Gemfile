@@ -76,3 +76,4 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
+gem 'rails_12factor', group: :production
