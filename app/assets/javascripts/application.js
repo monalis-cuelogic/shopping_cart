@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree
+
+
+//= require bootstrap.min
+//= require jquery-2.1.3
+//= require app
+//= require common
+//= require home2
