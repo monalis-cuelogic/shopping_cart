@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get "home/:quantity/send_mail", to: 'home#send_mail'
   get 'home/:current_user/pdf_show', to: "home#pdf_show"
   get 'home/pdf_show'
-  get '*path' => redirect('/')
+ # get '*path' => redirect('/')
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

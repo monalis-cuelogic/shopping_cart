@@ -1,12 +1,16 @@
 <% @total = @cart_product.price.to_i * @quantity_params.to_i  %>
 <% @current_user = current_user.name%>
 <% data = current_user.email %>
-<% if @gmail.deliver do%>
-<% to "#{}{data}"%>
-<% subject "Your Order Is Confirmed"  %>
-<% end%>
-<% flash[:notice] = "Your Order Is Confirmed"%>
-<% end %>
+
+<%# if @gmail.deliver do%>
+<%# to "#{}{data}"%>
+<%# subject "Your Order Is Confirmed"  %>
+<%#subject "#{@cart_product.name}"%>
+<%# binding.pry%>
+<%# body "welcome" %>
+<%# end%>
+<%# flash[:notice] = "Your Order Is Confirmed"%>
+<%# end %>
 <p>
 <% @current_user = current_user.name %>
 <%= link_to "Printable Receipt (PDF)", home_pdf_show_path(@cart, format: 'pdf', id: @cart_product.id, total: @total, quantity: @quantity_params )%>
@@ -26,3 +30,4 @@
     </div>
   </div>
 </div>
+

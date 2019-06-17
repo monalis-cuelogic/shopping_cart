@@ -1,7 +1,6 @@
 class CartPdf < Prawn::Document
   def initialize(cart,view,total,quantity_params,current_user)
     super(margin: 70)
-
     @cart = cart
     @total = total
     @quantity_params = quantity_params

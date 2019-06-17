@@ -93,7 +93,6 @@ class HomeController < ApplicationController
     @cart = Product.find(params[:id])
     @quantity_params = params[:quantity]
     @total = params[:total].to_i
-
     if params[:quantity].to_i <= @cart_product.quantity
       @diff_quantity = @cart_product.quantity - @quantity_params.to_i 
       @cart_product.quantity = @diff_quantity
@@ -102,12 +101,18 @@ class HomeController < ApplicationController
       flash[:alert] = "Please order only what's available #{@cart_product.quantity}"
       redirect_to buy_product_path(params[:id])
     end
-
     @gmail = Gmail.connect("27.11.1994.monali@gmail.com", "monali@27")
     data = current_user.email
+    data_name = current_user.name
+    prod_name = @cart_product.name
+    prod_price = @cart_product.price
+    prod_quantity = params[:quantity]
+    prod_image =  @cart_product.images
+    pdf = CartPdf.new(@cart, @view, @total,@quantity_params,@current_user)
     @gmail.deliver do
     to "#{data}"
-    subject "Your Order Is Confirmed"  
+    subject "Your Order Is Confirmed"
+    body "#{data_name}\n Product Details \n Product Name #{prod_name} \n Price #{prod_price} \n Quantity #{prod_quantity}"
     end
   end
 
