@@ -13,7 +13,8 @@
 <%# end %>
 <p>
 <% @current_user = current_user.name %>
-<%= link_to "Printable Receipt (PDF)", home_pdf_show_path(@cart, format: 'pdf', id: @cart_product.id, total: @total, quantity: @quantity_params )%>
+<%#= link_to "Printable Receipt (PDF)", home_pdf_show_path(@cart, format: 'pdf', id: @cart_product.id, total: @total, quantity: @quantity_params )%>
+<%= link_to "PDF cart", home_pdf_show_path(@cart, format: 'pdf', id: @cart_product.id, total: @total, quantity: @quantity_params, order_id: @order_id )%>
 </p>
 
 <h5 style="color: #c86e5b">Your order is confirmed</h5>
@@ -27,6 +28,7 @@
       <p class="card-text"><%= @cart_product.name%></p>
       <p class="card-text">Price - <%= @cart_product.price%></p>
       <p class="card-text">Quantity - <%= @quantity_params%></p>
+      <p class="card-text">Total - <%= @total%></p>
     </div>
   </div>
 </div>
